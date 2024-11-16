@@ -1,29 +1,14 @@
 import './homepage.css'
 import shoeSVG from './HomepageAssets/shoes-svgrepo-com.svg';
-import basketSVG from './HomepageAssets/shopping-basket-svgrepo-com.svg'
-import contactlistSVG from './HomepageAssets/contacts-svgrepo-com.svg'
-import homeSVG from './HomepageAssets/home-1-svgrepo-com.svg'
 import { Link } from 'react-router-dom';
+import NavBar from '../Components/NavBar';
 
 function homepage() {
 
     return (
         <div className='homepage-container'>
 
-            <div className='homepage-top'>
-                <button className='nav-button' style={{ width: '340px' }}>
-                    <span className='nav-button-text'>VoSuHi</span>
-                </button>
-                <button className='nav-button' style={{ width: '170px' }}>
-                <img src={homeSVG} alt="Home Icon" width="40" height="40"/>
-                </button>
-                <button className='nav-button' style={{ width: '220px' }}>
-                <img src={contactlistSVG} alt="Contact list Icon" width="40" height="40"/>
-                </button>
-                <button className='nav-button' style={{ width: '170px' }}>
-                <img src={basketSVG} alt="Basket Icon" width="40" height="40"/>
-                </button>
-            </div>
+            <NavBar/>
 
             <div className='homepage-mid'>
                 <div className='moto'>
