@@ -1,9 +1,12 @@
 import './homepage.css'
 import img1 from './HomepageAssets/shoes-svgrepo-com.svg';
+import { Link } from 'react-router-dom';
+
 function homepage() {
 
     return (
         <div className='homepage-container'>
+
             <div className='homepage-top'>
                 <button className='nav-button' style={{ width: '340px' }}>
                     <span className='nav-button-text'>VoSuHi</span>
@@ -28,8 +31,9 @@ function homepage() {
                 <img className="moto-svg" src={img1} alt="SVG Icon" width="320" height="320" />
             </div>
 
-
+            <Link className='shop-now-button' to="/ShopPage">
             <button className='shop-now-button'><p className='shop-now-button-text'>SHOP NOW</p></button>
+            </Link>
 
             <div className='homepage-bot'>
                 <p className='about-us-text'>ABOUT US: we are a small startup business located in Slovenija Maribor.
@@ -39,6 +43,8 @@ function homepage() {
                      Whether you're looking for athletic performance or everyday casuals, we have something for everyone.
                      </p>
             </div>
+
+           
 
         </div>
     )
