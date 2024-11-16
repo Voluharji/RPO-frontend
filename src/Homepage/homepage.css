@@ -1,0 +1,110 @@
+.homepage-container {
+    display: grid;
+    grid-template-columns: repeat(12, 75px);
+    grid-template-rows: repeat(12, 45px);
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.homepage-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2673b2;
+    height: 65px;
+    border: solid white 1px;
+    padding-left: 175px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100vw;
+    left: 0;
+}
+
+.nav-button{
+    background-color: rgb(9, 198, 239);
+    height: 65px;
+    border: solid white 1px;
+}
+
+.nav-button-text{
+    color: white;
+    font-size: 22px;
+    font-family: Anta, sans-serif;
+}
+
+.homepage-mid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    grid-column: 1 / 12;
+    grid-row: 4 /7;
+}
+
+.moto{
+    background-color: white;
+    width: 400px;
+    height: 300px;
+    border-radius: 50px;
+    justify-items: center;
+}
+
+.moto-text{
+    width: 380px;
+    height: 260px;
+    font-size: 45px;
+    font-family: Inter, sans-serif;
+    padding-left: 15px;
+    padding-top: 30px;
+}
+
+.shop-now-button{
+    width: 320px;
+    height: 90px;
+    background-color: rgb(90,80,80);
+    border-radius: 70px;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 4 / 6;
+    grid-row: 8/10;
+}
+
+.shop-now-button-text{
+    width: 225px;
+    height: 50px;
+    font-size: 40px;
+    color: rgb(110, 255, 250);
+    font-family: Inter, sans-serif;
+}
+
+.homepage-bot{
+    width: 900px;
+    height: 60px;
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    grid-column: 3/12;
+    grid-row: 10/11;
+}
+
+.about-us-text{
+    width: 140px;
+    height: 30px;
+    font-size: 22px;
+    font-family: Inter, sans-serif;
+    padding-left: 10px;
+}
