@@ -102,22 +102,23 @@
 
 .homepage-bot{
     width: 900px;
-    height: 60px;
+    height: 150px;
     background-color: white;
     border-radius: 20px;
 
     display: flex;
     justify-content: left;
-    align-items: center;
+    
 
     grid-column: 3/12;
     grid-row: 10/11;
 }
 
 .about-us-text{
-    width: 140px;
+    width: 900px;
     height: 30px;
-    font-size: 22px;
+    font-size: 18px;
     font-family: Inter, sans-serif;
     padding-left: 10px;
+    padding-top: 20px;
 }
