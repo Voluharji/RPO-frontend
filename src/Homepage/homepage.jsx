@@ -1,6 +1,8 @@
 import './homepage.css'
-import img1 from './HomepageAssets/shoes-svgrepo-com.svg';
-import img2 from './HomepageAssets/shopping-basket-svgrepo-com.svg'
+import shoeSVG from './HomepageAssets/shoes-svgrepo-com.svg';
+import basketSVG from './HomepageAssets/shopping-basket-svgrepo-com.svg'
+import contactlistSVG from './HomepageAssets/contacts-svgrepo-com.svg'
+import homeSVG from './HomepageAssets/home-1-svgrepo-com.svg'
 import { Link } from 'react-router-dom';
 
 function homepage() {
@@ -13,13 +15,13 @@ function homepage() {
                     <span className='nav-button-text'>VoSuHi</span>
                 </button>
                 <button className='nav-button' style={{ width: '170px' }}>
-                    <span className='nav-button-text'>Home</span>
+                <img src={homeSVG} alt="Home Icon" width="40" height="40"/>
                 </button>
                 <button className='nav-button' style={{ width: '220px' }}>
-                    <span className='nav-button-text'>Contact</span>
+                <img src={contactlistSVG} alt="Contact list Icon" width="40" height="40"/>
                 </button>
                 <button className='nav-button' style={{ width: '170px' }}>
-                <img src={img2} alt="Basket Icon" width="40" height="40"/>
+                <img src={basketSVG} alt="Basket Icon" width="40" height="40"/>
                 </button>
             </div>
 
@@ -29,7 +31,7 @@ function homepage() {
                         <b>Shoe shopping: <br /> the only cardio <br /> you’ll actually <br /> enjoy.</b>
                     </h1>
                 </div>
-                <img className="moto-svg" src={img1} alt="SVG Icon" width="320" height="320" />
+                <img className="moto-svg" src={shoeSVG} alt="SVG Icon" width="320" height="320" />
             </div>
 
             <Link className='shop-now-button' to="/ShopPage">
