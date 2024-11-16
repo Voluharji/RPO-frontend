@@ -1,5 +1,6 @@
 import './homepage.css'
 import img1 from './HomepageAssets/shoes-svgrepo-com.svg';
+import img2 from './HomepageAssets/shopping-basket-svgrepo-com.svg'
 import { Link } from 'react-router-dom';
 
 function homepage() {
@@ -18,7 +19,7 @@ function homepage() {
                     <span className='nav-button-text'>Contact</span>
                 </button>
                 <button className='nav-button' style={{ width: '170px' }}>
-                    <span className='nav-button-text'>🧺</span>
+                <img src={img2} alt="Basket Icon" width="40" height="40"/>
                 </button>
             </div>
 
