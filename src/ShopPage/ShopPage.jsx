@@ -6,7 +6,6 @@ function ShopPage() {
         <div>
             <NavBar/>
             <p>Drek na palci</p>
-            <Link to="/">Home</Link>
         </div>
     );
 }
