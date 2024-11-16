@@ -1,11 +1,12 @@
 import basketSVG from './NavBarAssets/shopping-basket-svgrepo-com.svg'
 import contactlistSVG from './NavBarAssets/contacts-svgrepo-com.svg'
 import homeSVG from './NavBarAssets/home-1-svgrepo-com.svg'
+import './NavBar.css'
 
 function NavBar(){
 
     return(
-    <div className='homepage-top'>
+    <div className='navbar'>
         <button className='nav-button' style={{ width: '340px' }}>
             <span className='nav-button-text'>VoSuHi</span>
         </button>

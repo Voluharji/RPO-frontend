@@ -9,41 +9,6 @@
     margin: 0 auto;
 }
 
-.homepage-top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #2673b2;
-    height: 65px;
-    border: solid white 1px;
-    padding-left: 175px;
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
-
-    width: 100vw;
-    left: 0;
-}
-
-.nav-button{
-    background-color: rgb(9, 198, 239);
-    height: 65px;
-    border: solid white 1px;
-    transition: background-color 250ms;
-}
-
-.nav-button:hover{
-    background-color: #0dace5;
-    cursor: pointer;
-}
-
-.nav-button-text{
-    color: white;
-    font-size: 22px;
-    font-family: Anta, sans-serif;
-}
-
 .homepage-mid{
     display: flex;
     align-items: center;
