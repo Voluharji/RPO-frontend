@@ -30,6 +30,12 @@
     background-color: rgb(9, 198, 239);
     height: 65px;
     border: solid white 1px;
+    transition: background-color 250ms;
+}
+
+.nav-button:hover{
+    background-color: #0dace5;
+    cursor: pointer;
 }
 
 .nav-button-text{
@@ -77,6 +83,13 @@
 
     grid-column: 4 / 6;
     grid-row: 8/10;
+
+    transition: background-color 250ms;
+}
+
+.shop-now-button:hover{
+    background-color: rgb(121, 183, 215);
+    cursor: pointer;
 }
 
 .shop-now-button-text{
