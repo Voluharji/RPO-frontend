@@ -1,5 +1,5 @@
 import './homepage.css'
-import shoeSVG from './HomepageAssets/shoes-svgrepo-com.svg';
+import fotka from './HomepageAssets/nogevluft.jpg'
 import { Link } from 'react-router-dom';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer'
@@ -18,7 +18,7 @@ function homepage() {
                         <b>Shoe shopping: <br /> the only cardio <br /> you’ll actually <br /> enjoy.</b>
                     </h1>
                 </div>
-                <img className="moto-svg" src={shoeSVG} alt="SVG Icon" width="320" height="320" />
+                <img className="photo" src={fotka} alt="SVG Icon"/>
             
                 <div>
                     <Link to="/ShopPage" style={{ textDecoration: 'none' }}>

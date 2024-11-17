@@ -11,7 +11,6 @@
 .homepage-mid {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     grid-column: 1 / 12;
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     margin: 20px 0;
@@ -19,11 +18,11 @@
 
 .moto {
     background-color: white;
-    width: 80%; /* Responsive width */
+    width: 50%; /* Responsive width */
     max-width: 400px; /* Prevent it from growing too large */
     height: auto; /* Adjust height based on content */
     aspect-ratio: 4 / 3; /* Maintain aspect ratio */
-    border-radius: 50px;
+    border-radius: 3px;
     justify-items: center;
 }
 
@@ -37,10 +36,11 @@
     padding-top: 30px;
 }
 
-.moto-svg {
-    width: 30vw; /* Adjust the size based on viewport */
-    max-width: 320px; /* Prevent it from growing too large */
+.photo {
+    width: 50%; /* Adjust the size based on viewport */
+    max-width: 300px; /* Prevent it from growing too large */
     height: auto; /* Maintain aspect ratio */
+    border-radius:3px;
 }
 
 /* Shop Now Button */
@@ -48,8 +48,8 @@
     width: 100%;
     max-width: 320px;
     height: 70px;
-    background-color: rgb(90, 80, 80);
-    border-radius: 70px;
+    background-color: #5588a1;
+    border-radius:3px;
     border: none;
     text-decoration: none;
     display: flex;
@@ -75,12 +75,12 @@
     text-align: center;
 }
 
-/* Footer Section */
+/* Bottom Section */
 .homepage-bot {
     width: 80%; /* Flexible width */
-    max-width: 900px; /* Prevent it from growing too large */
+    max-width: 910px; /* Prevent it from growing too large */
     background: linear-gradient(135deg, #f0f4f8, #ffffff);
-    border-radius: 20px;
+    border-radius:3px;
     display: flex;
     align-items: center;
     padding: 20px 30px;
