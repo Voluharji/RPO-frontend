@@ -7,6 +7,7 @@ import Footer from '../Components/Footer'
 function homepage() {
 
     return (
+        <>
         <div className='homepage-container'>
 
             <NavBar/>
@@ -41,6 +42,9 @@ function homepage() {
             </div>
 
         </div>
+
+        <Footer/>
+        </>
     )
 }
 
