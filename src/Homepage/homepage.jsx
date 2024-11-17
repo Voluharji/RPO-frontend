@@ -32,8 +32,6 @@ function homepage() {
                      </p>
             </div>
 
-           
-
         </div>
     )
 }
