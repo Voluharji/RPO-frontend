@@ -70,25 +70,33 @@
     font-family: Inter, sans-serif;
 }
 
-.homepage-bot{
+.homepage-bot {
     width: 900px;
-    height: 150px;
-    background-color: white;
+    height: 170px;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
     border-radius: 20px;
-
     display: flex;
-    justify-content: left;
-    
-
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
     grid-column: 3/12;
     grid-row: 10/11;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-us-text{
-    width: 900px;
-    height: 30px;
+.homepage-bot:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.about-us-text {
+    width: 100%; 
     font-size: 18px;
-    font-family: Inter, sans-serif;
-    padding-left: 10px;
-    padding-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #555; 
+    line-height: 1.5; 
+    padding: 0; 
+    margin: 0; 
+    text-align: left; 
 }

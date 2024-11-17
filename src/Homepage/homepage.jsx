@@ -24,7 +24,7 @@ function homepage() {
             </Link>
 
             <div className='homepage-bot'>
-                <p className='about-us-text'>ABOUT US: we are a small startup business located in Slovenija Maribor.
+                <p className='about-us-text'><b>ABOUT US:</b> we are a small startup business located in Slovenija Maribor.
                      Our main mission is to bring you tested high-quality products, with a focus on premium footwear.
                      As shoe enthusiasts ourselves, we wanted to share our passion, by offering a selection of the best brands under one roof. 
                      We pride ourselves on providing an exceptional shopping experience, by offering a wide variety of footwear.

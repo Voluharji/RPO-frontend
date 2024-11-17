@@ -15,6 +15,7 @@ function NavBar(){
 
         <Link to='/'>
         <button className='nav-button' style={{ width: '170px' }}>
+        
         <img src={homeSVG} alt="Home Icon" width="40" height="40"/>
         </button>
         </Link>
