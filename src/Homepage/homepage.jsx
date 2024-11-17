@@ -19,7 +19,7 @@ function homepage() {
                         <b>Shoe shopping: <br /> the only cardio <br /> you’ll actually <br /> enjoy.</b>
                     </h1>
                 </div>
-                <img className="moto-svg" src={shoeSVG} alt="SVG Icon" width="320" height="320" />
+                <img className="photo" src={fotka} alt="SVG Icon" width="320" height="320" />
             
                 <div>
                     <Link to="/ShopPage" style={{ textDecoration: 'none' }}>
