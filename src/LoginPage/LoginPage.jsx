@@ -2,6 +2,7 @@ import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import loginICON from '../LoginPage/LoginPageAssets/login-3-svgrepo-com.svg'
 import './LoginPage.css'
+import {Link} from "react-router-dom";
 
 function LoginPage(){
     return(
@@ -30,14 +31,12 @@ function LoginPage(){
                     <br/>
 
                     <div className='login-bot'>
-                        <div className='stock-btn-container'>
-                            <p>or log in with</p>
-                            <button className="stock-login-btn">
-                                &emsp;<i className="fa fa-facebook-official"></i>&emsp;Facebook
-                            </button>
-                            <button className="stock-login-btn">
-                                <i className="fa fa-google"></i>&emsp;Google
-                            </button>
+                        <div className='register-container'>
+                            <p>no account yet?</p>
+
+                            <Link to="/SignUpPage">
+                                <button className="signup-btn"><b>SIGN UP</b></button>
+                            </Link>
                         </div>
                     </div>
                 </div>
