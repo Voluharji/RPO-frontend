@@ -18,11 +18,27 @@ function LoginPage(){
                         <input className='input-text-field' type='text' placeholder="Username"/>
                         <input className='input-text-field' type='text' placeholder="Password"/>
                         <button className='login-button'><b>LOG IN</b></button>
+
+                        <div className="remember-checkbox">
+                            <input type="checkbox" id="remember-me" value="remebmer-me"/>
+                            <label htmlFor="remember-me"> <i>Remember me </i> </label>
+                        </div>
+
                         <hr></hr>
                     </div>
 
-                    <div className='login-bot'>
+                    <br/>
 
+                    <div className='login-bot'>
+                        <div className='stock-btn-container'>
+                            <p>or log in with</p>
+                            <button className="stock-login-btn">
+                                &emsp;<i className="fa fa-facebook-official"></i>&emsp;Facebook
+                            </button>
+                            <button className="stock-login-btn">
+                                <i className="fa fa-google"></i>&emsp;Google
+                            </button>
+                        </div>
                     </div>
                 </div>
             </main>
