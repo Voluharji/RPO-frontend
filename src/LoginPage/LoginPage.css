@@ -43,7 +43,7 @@ input[type=text]{
     width: 300px;
     height: 60px;
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-left: 12.5%;
 
     color: rgb(0, 0, 0);
@@ -62,22 +62,31 @@ input[type=text]{
     padding: 2%;
 }
 
-.stock-btn-container{
+.register-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:10px;
+    gap:15px;
 
     font-family: Inter, sans-serif;
 }
 
-.stock-login-btn{
-    height: 30px;
+.signup-btn{
+    border: none;
+    border-radius: 3px;
+    background-color: #ecb677;
+
+    height: 50px;
     width: 250px;
+
+    font-size: 1.2rem;
+
+    transition: background-color 250ms;
 }
 
-.stock-login-btn:hover{
+.signup-btn:hover{
     cursor: pointer;
+    background-color: #efc7a2;
 }
 
 @media (max-width: 768px) {
