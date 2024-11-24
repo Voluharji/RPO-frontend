@@ -5,12 +5,10 @@
     background-color: #ffffff;
     height: 65px;
     border: solid white 1px;
-    padding-left: 5%; 
-    padding-right: 5%; 
     position: sticky;
     top: 0;
     z-index: 100;
-    width: 99vw;
+    width: 100%;
     left: 0;
 }
 
