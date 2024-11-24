@@ -3,20 +3,11 @@ import Footer from '../Components/Footer';
 
 function ShopPage() {
     return (
-        <div>
-            <div className="Shoppage-navBar">
-                <NavBar/>
-            </div>
-            <div className="flex-wrapper">
-            <div className="Shoppage">
+        <>
+            <NavBar/>
 
-            </div>
-                <div className="shoppage-footer">
             <Footer/>
-                </div>
-
-            </div>
-        </div>
+        </>
     );
 }
 

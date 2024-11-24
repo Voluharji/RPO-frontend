@@ -5,11 +5,32 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Makes sure padding and borders are included in the element's total width and height */
+  box-sizing: border-box; /* Include padding and borders in element size */
 }
 
 html, body {
-  height: 100%; /* Ensure body takes the full height */
-  width: 100%;  /* Ensure the body takes the full width */
+  height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;     /* React root element should also use flexbox */
+  flex-direction: column; /* Stack children of root vertically */
+  flex: 1;           /* Allow content inside root to grow */
+}
+
+main {
+  flex: 1; /* Main content expands to take available space */
+  display: grid;
+  grid-template-columns: repeat(12, minmax(50px,1fr));
+  grid-template-rows: repeat(8, minmax(20px, 12.5%)); /* Automatically adjusts rows */
+  gap: 5px; /* Adjust gap for smaller screens */
+  justify-items: center;
+  width: 100%;
+  margin: 0 auto;
+}

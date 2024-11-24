@@ -1,18 +1,4 @@
-.homepage-container {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(50px, 1fr)); /* Columns will be at least 50px wide but can grow */
-    grid-template-rows: auto; /* Automatically adjusts rows */
-    gap: 10px; /* Adjust gap for smaller screens */
-    justify-items: center;
-    width: 100%;
-    margin: 0 auto;
-}
-.flex-wrapper {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
 .homepage-mid {
     display: flex;
     align-items: center;
@@ -90,9 +76,10 @@
     align-items: center;
     padding: 20px 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
     grid-column: 1 / 12;
+    grid-row: 6/8;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .homepage-bot:hover {
