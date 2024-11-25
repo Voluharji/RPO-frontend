@@ -29,9 +29,11 @@ function NavBar(){
                 </button>
             </Link>
 
-            <button className='nav-button' style={{width: '25%'}}>
-                <img src={infoSVG} alt="Contact list Icon" width="40" height="40"/>
-            </button>
+            <Link to={'/InfoPage'} className="nav-link" style={{width: '25%'}}>
+                <button className='nav-button' style={{width: '100%'}}>
+                    <img src={infoSVG} alt="Contact list Icon" width="40" height="40"/>
+                </button>
+            </Link>
         </div>
     )
 }

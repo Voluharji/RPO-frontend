@@ -1,0 +1,10 @@
+
+.Shoppage2{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(50px, 1fr));
+    grid-template-rows: auto;
+    gap: 10px;
+    justify-items: center;
+    width: 100%;
+    margin: 0 auto;
+}

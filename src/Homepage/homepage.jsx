@@ -1,8 +1,8 @@
 import './homepage.css'
 import fotka from './HomepageAssets/nogevluft.jpg'
 import { Link } from 'react-router-dom';
-import NavBar from '../Components/NavBar';
-import Footer from '../Components/Footer'
+import NavBar from '../Components/NavBar/NavBar.jsx';
+import Footer from '../Components/Footer/Footer.jsx'
 
 function homepage() {
 

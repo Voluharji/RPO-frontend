@@ -1,7 +1,7 @@
-import NavBar from '../Components/NavBar';
+import NavBar from '../Components/NavBar/NavBar.jsx';
 import './SignUpPage.css'
 import {Link} from "react-router-dom";
-import Footer from "../Components/Footer.jsx";
+import Footer from "../Components/Footer/Footer.jsx";
 function SignUpPage(){
     return(
         <>

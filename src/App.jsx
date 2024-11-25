@@ -4,6 +4,7 @@ import  Homepage  from './Homepage/homepage.jsx'
 import ShopPage from './ShopPage/ShopPage.jsx'
 import LoginPage from './LoginPage/LoginPage.jsx'
 import SignUpPage from "./SignUpPage/SignUpPage.jsx";
+import InfoPage from "./InfoPage/InfoPage.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/ShopPage" element={<ShopPage />} />
         <Route path="/LoginPage" element={<LoginPage/>} />
         <Route path="/SignUpPage" element={<SignUpPage/>} />
+        <Route path="/InfoPage" element={<InfoPage/>} />
       </Routes>
     </HashRouter>
   );

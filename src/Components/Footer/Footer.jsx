@@ -1,5 +1,5 @@
 import "./Footer.css"
-import logo from "./NavBarAssets/VoSuHi.svg"
+import logo from "../NavBar/NavBarAssets/VoSuHi.svg"
 
 function Footer() {
 
