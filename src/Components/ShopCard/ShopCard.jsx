@@ -9,7 +9,7 @@ function ShopCard({name,price,photo}){
                 <img src={photo} alt='img' height='100%' width='100%'/>
             </div>
             <div className='shop-card-info'>
-                <h3>{name}</h3>
+                <h3 className='shop-card-name'>{name}</h3>
                 <p className='price-text'>{price}</p>
                 <button className='shop-card-btn'><img src={CartSvg} alt='Cart' height='100%' width='100%'/></button>
             </div>
