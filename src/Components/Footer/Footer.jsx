@@ -6,7 +6,7 @@ function Footer() {
     return (
         <div className="Footer">
             <div className="footer-container-left">
-                <img src={logo} className="logo" alt="logo" width="200px" height="100px" />
+                <img src={logo} className="logo" alt="logo" width="60px"/>
                 <div className="social-links">
                     <i className="fa fa-facebook-official"></i>
                     <i className="fa fa-instagram"></i>
@@ -16,7 +16,7 @@ function Footer() {
                 </div>
             </div>
             <div className="footer-container-right">
-                <h2>Kontakt:</h2>
+                <h5>Kontakt:</h5>
                 <div className="contact-data">
                     <i className="fa fa-map-marker"></i> Koroška cesta 46, 2000 Maribor <br/>
                     <i className="fa fa-phone"></i> +000 000 00 0 <br/>

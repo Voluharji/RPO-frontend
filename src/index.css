@@ -33,4 +33,6 @@ main {
   justify-items: center;
   width: 100%;
   margin: 0 auto;
+
+  grid-auto-rows: minmax(20px, 12.5%); /* Enaka višina kot eksplicitne vrstice */
 }
