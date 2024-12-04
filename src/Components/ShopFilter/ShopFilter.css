@@ -1,0 +1,13 @@
+.shop-filter-container{
+    grid-row: 1/13;
+    grid-column: 1/4;
+
+    background-color: #d7caca;
+    width:100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    box-shadow: 6px 5px 5px rgba(0.1, 0.1, 0.1, 0.1);
+}
