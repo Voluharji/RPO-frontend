@@ -1,5 +1,5 @@
 import './homepage.css'
-import fotka from './HomepageAssets/nogevluft.jpg'
+import fotka from './HomepageAssets/IMG_4541.jpg'
 import { Link } from 'react-router-dom';
 import NavBar from '../Components/NavBar/NavBar.jsx';
 import Footer from '../Components/Footer/Footer.jsx'
@@ -13,18 +13,20 @@ function homepage() {
                 <main>
 
                     <div className='homepage-mid'>
-                        <div className='moto'>
-                            <h1 className='moto-text'>
-                                <b>Shoe shopping: <br /> the only cardio <br /> you’ll actually <br /> enjoy.</b>
-                            </h1>
+                        <div className='moto-photo'>
+                            <div className='moto'>
+                                <h1 className='moto-text'>
+                                    <b>Shoe shopping: <br/> the only cardio <br/> you’ll actually <br/> enjoy.</b>
+                                </h1>
+                            </div>
+
+                            <img className="photo" src={fotka} alt="SVG Icon" />
                         </div>
 
-                            <img className="photo" src={fotka} alt="SVG Icon" width="320" height="320" />
-
                         <div>
-                            <Link to="/ShopPage" style={{ textDecoration: 'none' }}>
+                            <Link to="/ShopPage" style={{textDecoration: 'none'}}>
                                 <button className="shop-now-btn">
-                                SHOP NOW
+                                    SHOP NOW
                                 </button>
                             </Link>
                         </div>

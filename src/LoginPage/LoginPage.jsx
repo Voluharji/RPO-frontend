@@ -1,6 +1,6 @@
 import NavBar from '../Components/NavBar/NavBar.jsx';
 import Footer from '../Components/Footer/Footer.jsx';
-import loginICON from '../LoginPage/LoginPageAssets/login-3-svgrepo-com.svg'
+import loginICON from '../LoginPage/LoginPageAssets/login-3-svgrepo-com (1).svg'
 import './LoginPage.css'
 import {Link} from "react-router-dom";
 
