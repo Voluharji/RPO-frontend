@@ -2,8 +2,8 @@ import NavBar from '../Components/NavBar/NavBar.jsx';
 import Footer from '../Components/Footer/Footer.jsx';
 import InfoCards from "../Components/InfoCards/InfoCards.jsx";
 import './InfoPage.css'
-import jasaICON from '../InfoPage/Info page assets/kitty_9042172.png';
-import sorgoICON from '../InfoPage/Info page assets/broccoli_8357688.png'
+import jasaICON from '../InfoPage/Info page assets/hlid.jpg';
+import sorgoICON from '../InfoPage/Info page assets/2d1aff5a-5f49-479d-aa71-b83d5d70b361.jpg'
 import jakobICON from '../InfoPage/Info page assets/9319916.jpg'
 import jernejICON from '../InfoPage/Info page assets/st,small,507x507-pad,600x600,f8f8f8.jpg'
 
