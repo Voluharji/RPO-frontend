@@ -1,7 +1,7 @@
 .shop-card{
     background-color: white;
     width: 100%;
-    grid-row: span 5;
+    grid-row: span 4;
     grid-column: span 3;
     border-radius: 5px;
     padding: 2%;
