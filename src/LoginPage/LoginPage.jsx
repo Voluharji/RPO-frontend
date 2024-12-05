@@ -2,9 +2,27 @@ import NavBar from '../Components/NavBar/NavBar.jsx';
 import Footer from '../Components/Footer/Footer.jsx';
 import loginICON from '../LoginPage/LoginPageAssets/login-3-svgrepo-com (1).svg'
 import './LoginPage.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import LoginFunction from "../Components/LoginSignUpFunctions/LoginFunction.jsx";
+import {useState} from "react";
 
 function LoginPage(){
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        LoginFunction({ username, password })
+            .then(() => {
+                navigate("/ProfilePage");
+            })
+            .catch((error) => {
+                console.error("Login failed:", error);
+                alert("Login failed! Please check your credentials.");
+            });
+    };
+
     return(
         <>
             <NavBar/>
@@ -16,9 +34,13 @@ function LoginPage(){
                     </div>
 
                     <div className='login-mid'>
-                        <input className='input-text-field' type='text' placeholder="Username"/>
-                        <input className='input-text-field' type='text' placeholder="Password"/>
-                        <button className='login-button'><b>LOG IN</b></button>
+                        <input className='input-text-field' type='text' placeholder="Username" value={username}
+                               onChange={(e) => setUsername(e.target.value)}/>
+
+                        <input className='input-text-field' type='text' placeholder="Password" value={password}
+                               onChange={(e) => setPassword(e.target.value)}/>
+
+                        <button className='login-button' onClick={handleLogin}><b>LOG IN</b></button>
 
                         <div className="remember-checkbox">
                             <input type="checkbox" id="remember-me" value="remebmer-me"/>
