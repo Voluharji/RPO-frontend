@@ -3,8 +3,9 @@ import './SignUpPage.css'
 import {Link} from "react-router-dom";
 import Footer from "../Components/Footer/Footer.jsx";
 import {useState} from "react";
-import { useNavigate } from "react-router-dom";
 import SignUpFunction from "../Components/LoginSignUpFunctions/signUpFunction.jsx";
+import LoginFunction from "../Components/LoginSignUpFunctions/LoginFunction.jsx";
+import {useNavigate} from "react-router-dom";
 
 
 function SignUpPage(){
@@ -15,8 +16,8 @@ function SignUpPage(){
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-
     const navigate = useNavigate();
+
 
     const handleSignUp = () => {
 
@@ -27,6 +28,10 @@ function SignUpPage(){
 
         SignUpFunction({email, username, password,phoneNumber,firstName, lastName})
             .then(() => {
+                LoginFunction({username, password})
+                    .then(()=>{
+                    navigate("/ProfilePage");
+                })
 
             })
         .catch((error) => {

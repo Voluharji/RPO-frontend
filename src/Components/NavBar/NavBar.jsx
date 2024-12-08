@@ -8,6 +8,11 @@ import { Link } from 'react-router-dom'
 
 function NavBar(){
 
+    const token = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("token="))
+        ?.split("=")[1];
+
     return(
         <div className='navbar'>
 
@@ -23,11 +28,17 @@ function NavBar(){
             </button>
             </Link>
 
+            {token ? ( <Link to='/ProfilePage' className="nav-link" style={{width: '25%'}}>
+            <button className='nav-button' style={{width: '100%'}}>
+                <img src={profileSVG} alt="Profile Icon" width="40" height="40"/>
+            </button>
+        </Link>) : (
             <Link to='/LoginPage' className="nav-link" style={{width: '25%'}}>
                 <button className='nav-button' style={{width: '100%'}}>
                     <img src={profileSVG} alt="Profile Icon" width="40" height="40"/>
                 </button>
             </Link>
+            )}
 
             <Link to={'/InfoPage'} className="nav-link" style={{width: '25%'}}>
                 <button className='nav-button' style={{width: '100%'}}>

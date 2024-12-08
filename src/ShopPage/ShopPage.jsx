@@ -8,6 +8,7 @@ import Test from '../Components/InfoCards/infocardsAssets/computer2.svg'
 import './shoppage.css';
 
 function ShopPage() {
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -42,7 +43,9 @@ function ShopPage() {
                             key={product.id} // Use a unique key for React rendering
                             name={product.name}
                             price={`${product.price}$`}
+                            id={product.productId}
                             photo={Test}
+
                         />
                     ))
                 ) : (

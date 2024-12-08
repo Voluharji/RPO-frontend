@@ -4,7 +4,6 @@ import InfoCards from "../Components/InfoCards/InfoCards.jsx";
 import './InfoPage.css'
 import photo1 from '../Components/InfoCards/infocardsAssets/computer-svgrepo-com.svg';
 
-
 function InfoPage() {
     return (
         <>
