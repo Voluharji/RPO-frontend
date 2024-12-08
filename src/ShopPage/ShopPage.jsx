@@ -4,7 +4,7 @@ import Footer from '../Components/Footer/Footer.jsx';
 import SearchBar from "../Components/SearchBar/SearchBar.jsx";
 import ShopFilter from "../Components/ShopFilter/ShopFilter.jsx";
 import ShopCard from "../Components/ShopCard/ShopCard.jsx";
-import Test from '../Homepage/HomepageAssets/IMG_4534.jpg'
+import Test from '../Homepage/HomepageAssets/Pair-of-pink-sport-shoes-on-white-background.jpg'
 import './shoppage.css';
 
 function ShopPage() {
