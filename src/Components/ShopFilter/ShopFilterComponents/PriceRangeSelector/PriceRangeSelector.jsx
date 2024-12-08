@@ -1,5 +1,6 @@
 import './PriceRangeSelector.css'
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function PriceRangeSelector(){
     const [sliderMinValue] = useState(0);
@@ -83,8 +84,16 @@ function PriceRangeSelector(){
         setIsDragging(true);
     };
 
-    const stopDrag = () => {
+    const stopDrag = async () => {
         setIsDragging(false);
+        const data = { min: parseInt(minVal), max: parseInt(maxVal) };
+
+        try {
+            const response = await axios.post("https://api/product_search", data);
+            console.log("Server Response:", response.data);
+        } catch (error) {
+            console.error("Error sending data:", error);
+        }
     };
 
 
