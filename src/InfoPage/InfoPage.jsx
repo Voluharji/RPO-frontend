@@ -2,41 +2,39 @@ import NavBar from '../Components/NavBar/NavBar.jsx';
 import Footer from '../Components/Footer/Footer.jsx';
 import InfoCards from "../Components/InfoCards/InfoCards.jsx";
 import './InfoPage.css'
-import photo1 from '../Components/InfoCards/infocardsAssets/computer-svgrepo-com.svg';
+import jasaICON from '../InfoPage/Info page assets/hlid.jpg';
+import sorgoICON from '../InfoPage/Info page assets/2d1aff5a-5f49-479d-aa71-b83d5d70b361.jpg'
+import jakobICON from '../InfoPage/Info page assets/9319916.jpg'
+import jernejICON from '../InfoPage/Info page assets/st,small,507x507-pad,600x600,f8f8f8.jpg'
 
 function InfoPage() {
     return (
         <>
             <NavBar/>
             <main>
-                <div className='infopage-top'>
-                    <InfoCards name={"Nejc"} surname={"Šorgo"} mail={"vosuhi@gmail.com"} slika={photo1}
+                <div className='info-card-container'>
+                    <InfoCards name={"Nejc"} surname={"Šorgo"} mail={"vosuhi@gmail.com"} slika={sorgoICON}
                                telephoneNum={"000 000 000"}
-                               about={"A programer that doesent like deadlines"}></InfoCards>
-                </div>
+                               about={"Broccoli head"}></InfoCards>
 
 
-                <div className='infopage-mid'>
-                    <InfoCards name={"Jaša"} surname={"Potočnik"} mail={"vosuhi@gmail.com"} slika={photo1}
+                    <InfoCards name={"Jaša"} surname={"Potočnik"} mail={"vosuhi@gmail.com"} slika={jasaICON}
                                telephoneNum={"000 000 000"}
-                               about={"A backend programmer, that is working on our site,he mainly specializes in database managment."}></InfoCards>
-                </div>
+                               about={"Anime girl creep"}></InfoCards>
 
 
-                <div className='infopage-mid2'>
-                    <InfoCards name={"Jernej"} surname={"Lobnik"} mail={"vosuhi@gmail.com"} slika={photo1}
+                    <InfoCards name={"Jernej"} surname={"Lobnik"} mail={"vosuhi@gmail.com"} slika={jernejICON}
                                telephoneNum={"000 000 000"}
-                               about={"A frontend programmer, that is responible for the look of our site, if you have any complains or suggestions please turn to him, he is welcome to feedback."}></InfoCards>
-                </div>
+                               about={"A chill guy"}></InfoCards>
 
-                <div className='infopage-mid3'>
-                    <InfoCards name={"Jakob"} surname={"Renčelj"} mail={"vosuhi@gmail.com"} slika={photo1}
+
+                    <InfoCards name={"Jakob"} surname={"Renčelj"} mail={"vosuhi@gmail.com"} slika={jakobICON}
                                telephoneNum={"000 000 000"}
-                               about={"A programer that doesent like deadlines"}></InfoCards>
+                               about={"Local Kebab consumer"}></InfoCards>
                 </div>
-
 
             </main>
+
             <Footer/>
         </>
     );

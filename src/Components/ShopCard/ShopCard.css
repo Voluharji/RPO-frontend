@@ -1,7 +1,7 @@
 .shop-card{
     background-color: white;
     width: 100%;
-    grid-row: span 5;
+    grid-row: span 4;
     grid-column: span 3;
     border-radius: 5px;
     padding: 2%;
@@ -20,18 +20,18 @@
 }
 
 .shop-card-photo{
-    width: 60%;
+    width: 65%;
 }
 
 .shop-card-info{
-    width: 40%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10%;
 
-    background-color: #d7caca;
+    background-color: #F6E4D9;
     border-radius: 3px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .shop-card-btn{
-    background-color: #fca552;
+    background-color: #FF9900;
     border-radius: 5px;
     height: 15%;
     width: 80%;
@@ -51,10 +51,11 @@
 }
 
 .shop-card-btn:hover{
-    background-color: #bb6200;
+    background-color: #CC7700;
     cursor: pointer;
 }
 
 .price-text{
     font-size: 1.5rem;
+    color: #ff6000;
 }

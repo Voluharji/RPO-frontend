@@ -4,11 +4,9 @@ function InfoCards({ name, surname, mail ,telephoneNum, slika, about}) {
     return(
         <div className="info-card">
 
-            <div className="info-cardSlika">
-                <img className="Info-photo" src={slika} alt="SVG Icon"/>
-            </div>
+            <img className="Info-photo" src={slika} alt="SVG Icon"/>
 
-            <div className="info-cardOpis">
+            <div className="info-card-opis">
                 <p>{name} {surname}</p>
                 <p><i className="fa fa-envelope"></i> {mail}</p>
                 <p><i className="fa fa-phone"></i> {telephoneNum}</p>
@@ -16,7 +14,6 @@ function InfoCards({ name, surname, mail ,telephoneNum, slika, about}) {
             </div>
 
         </div>
-
 
     )
 }
