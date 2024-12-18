@@ -3,9 +3,8 @@
     width: 100%;
     grid-row: span 4;
     grid-column: span 3;
-    border-radius: 5px;
+    border-radius: 0px;
     padding: 2%;
-    margin:2%;
 
     font-family: Inter,sans-serif;
     display: flex;
@@ -41,9 +40,9 @@
 }
 
 .shop-card-btn{
-    background-color: #FF9900;
+    background-color: #fe696a;
     border-radius: 5px;
-    height: 15%;
+    height: 18%;
     width: 80%;
     border:none;
 
@@ -51,7 +50,7 @@
 }
 
 .shop-card-btn:hover{
-    background-color: #CC7700;
+    background-color: #ff494a;
     cursor: pointer;
 }
 

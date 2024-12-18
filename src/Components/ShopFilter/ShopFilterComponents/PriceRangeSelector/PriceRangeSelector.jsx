@@ -96,11 +96,8 @@ function PriceRangeSelector(){
         }
     };
 
-
-
     return (
         <div className="double-slider-box">
-            <p className='title-text'>Set price (min/max):</p>
             <div className="input-box">
                 <div className="min-box">
                     <input

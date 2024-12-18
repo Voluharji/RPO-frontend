@@ -41,7 +41,7 @@ function ShopPage() {
                         <ShopCard
                             key={product.id} // Use a unique key for React rendering
                             name={product.name}
-                            price={`${product.price}$`}
+                            price={`${product.price}€`}
                             photo={Test}
                         />
                     ))

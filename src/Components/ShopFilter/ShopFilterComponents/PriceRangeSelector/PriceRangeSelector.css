@@ -1,6 +1,5 @@
 .double-slider-box {
     background-color: #F6E4D9;
-    padding: 20px;
     width: 75%;
 }
 
@@ -117,8 +116,3 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-.title-text{
-    font-family: Inter, sans-serif;
-    padding-bottom: 5%;
-    color: #6b6262;
-}

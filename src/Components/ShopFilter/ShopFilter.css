@@ -5,9 +5,42 @@
     background-color: #F6E4D9;
     width:100%;
     height: 100%;
+    padding: 5%;
 
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*box-shadow: 6px 5px 5px rgba(0.1, 0.1, 0.1, 0.1);*/
+}
 
-    justify-content: center;
-    box-shadow: 6px 5px 5px rgba(0.1, 0.1, 0.1, 0.1);
+.title-text{
+    font-family: Inter, sans-serif;
+    color: #6b6262;
+    padding-bottom: 5%;
+    width: 85%;
+}
+
+.forum-submit-btn{
+
+    margin-top: 5%;
+    height: 8%;
+    width: 85%;
+    border: none;
+    background-color: #fe696a;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+    transition: all 0.3s;
+}
+
+.forum-submit-btn:hover{
+    background-color: #ff494a;
+    cursor: pointer;
+}
+
+.checkbox-container{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
 }

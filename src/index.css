@@ -29,7 +29,7 @@ main {
   display: grid;
   grid-template-columns: repeat(12, minmax(50px,1fr));
   grid-template-rows: repeat(8, minmax(20px, 12.5%)); /* Automatically adjusts rows */
-  gap: 5px; /* Adjust gap for smaller screens */
+  gap: 0px; /* Adjust gap for smaller screens */
   justify-items: center;
   width: 100%;
   margin: 0 auto;
