@@ -34,7 +34,7 @@ function homepage() {
                 <ShoeSwiper/>
             </section>
 
-            <section className='homepage-section' style={{background: '#fff9d4'}}>
+            <section className='homepage-section' style={{background: 'rgb(215, 174, 121)'}}>
 
                 <p className='about-us-text'><b>ABOUT US:</b> we are a small startup business located in
                     Slovenija

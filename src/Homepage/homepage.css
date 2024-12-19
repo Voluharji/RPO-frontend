@@ -58,72 +58,12 @@
 
 .about-us-text {
     width: 70%;
-    font-size: clamp(14px, 6vw, 25px); /* Responsive font size */
+    font-size: 1.5rem; /* Responsive font size */
     font-family: 'Roboto', sans-serif;
-    color: #555;
+    color: white;
     line-height: 1.5;
     padding: 0;
     margin: 0;
     text-align: left;
 }
 
-/* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
-    .homepage-container {
-        grid-template-columns: repeat(6, 1fr); /* Adjust grid for smaller screens */
-    }
-
-    .homepage-mid {
-        grid-column: 1 / 7; /* Allow content to span full width on smaller screens */
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items */
-    }
-
-    .moto {
-        width: 90%; /* Adjust width for mobile */
-        max-width: 300px; /* Smaller size on mobile */
-    }
-
-    .moto-svg {
-        width: 60vw; /* Adjust size for mobile */
-        max-width: 250px; /* Prevent it from getting too big */
-    }
-
-    .shop-now-button {
-        max-width: 250px; /* Smaller button size */
-    }
-
-    .homepage-bot {
-        width: 90%; /* Flexible width */
-        max-width: 500px; /* Reduce max-width for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .homepage-container {
-        grid-template-columns: repeat(2, 1fr); /* Stack elements in two columns */
-    }
-
-    .homepage-mid {
-        grid-column: 1 / 3; /* Adjust grid span */
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items */
-    }
-
-    .moto {
-        max-width: 200px; /* Further reduce size for small screens */
-    }
-
-    .moto-svg {
-        width: 80vw; /* Make SVG icon even smaller */
-    }
-
-    .shop-now-button {
-        max-width: 200px; /* Adjust button size */
-        height: 50px; /* Smaller button height */
-    }
-
-    .about-us-text {
-        font-size: clamp(12px, 3vw, 16px); /* Smaller font size for mobile */
-    }
-}

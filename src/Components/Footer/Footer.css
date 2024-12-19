@@ -18,18 +18,18 @@
 }
 
 .contact-data {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 .footer-container-right {
     display: flex;
     flex-direction: column;
 
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .social-links {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 5px;
     cursor: pointer;
     letter-spacing: 5px;

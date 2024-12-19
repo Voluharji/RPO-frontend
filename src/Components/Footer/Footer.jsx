@@ -6,7 +6,7 @@ function Footer() {
     return (
         <div className="Footer">
             <div className="footer-container-left">
-                <img src={logo} className="logo" alt="logo" width="60px"/>
+                <img src={logo} className="logo" alt="logo" width="90px"/>
                 <div className="social-links">
                     <i className="fa fa-facebook-official"></i>
                     <i className="fa fa-instagram"></i>

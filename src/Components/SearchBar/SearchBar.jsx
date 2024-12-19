@@ -1,6 +1,5 @@
 import './SearchBar.css'
 import PovStekloSVG from './SearchBarAssets/magnifying-glass-svgrepo-com.svg'
-import CategoriesMenu from "../CategoriesMenu/CategoriesMenu.jsx";
 
 function SearchBar(){
     return (

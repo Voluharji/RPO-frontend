@@ -45,41 +45,41 @@ function CategoriesMenu (){
     const customStyles = {
         control: (base, state) => ({
             ...base,
-            backgroundColor: "#cb2284",
-            borderColor: state.isFocused ? "#880d53" : "#880d53",
-            boxShadow: state.isFocused ? "0 0 0 2px #880d53" : null,
+            backgroundColor: "#d9c1a5",
+            borderColor: state.isFocused ? "rgb(215, 174, 121)" : "rgb(215, 174, 121)",
+            boxShadow: state.isFocused ? "0 0 0 2px rgb(215, 174, 121)" : null,
             width: "100%",
             paddingRight: "0px",
             marginRight: "0px",
             height: "100%",
             borderRadius: "0px",
             "&:hover": {
-                borderColor: "#880d53",
+                borderColor: "rgb(215, 174, 121)",
             },
         }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isFocused ? "#fbeafa" : "white",
-            color: state.isFocused ? "#880d53" : "#333",
+            backgroundColor: state.isFocused ? "rgb(215, 174, 121)" : "white",
+            color: state.isFocused ? "rgb(252,252,252)" : "rgb(215, 174, 121)",
             "&:active": {
-                backgroundColor: "#ef6eb4",
+                backgroundColor: "rgb(239,225,211)",
             },
         }),
         multiValue: (base) => ({
             ...base,
-            backgroundColor: "#f3e8f5",
-            color: "#880d53",
+            backgroundColor: "white",
+            color: "rgb(241,233,221)",
         }),
         multiValueLabel: (base) => ({
             ...base,
-            color: "#880d53",
+            color: "rgb(215, 174, 121)",
         }),
         multiValueRemove: (base) => ({
             ...base,
-            color: "#880d53",
+            color: "rgb(128,126,126)",
             "&:hover": {
-                backgroundColor: "#880d53",
-                color: "#333",
+                backgroundColor: "rgb(213,210,210)",
+                color: "rgb(128,126,126)",
             },
         }),
         placeholder: (base) => ({
