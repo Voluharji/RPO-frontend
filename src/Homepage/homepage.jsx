@@ -1,11 +1,14 @@
 import './homepage.css'
-import fotka from './HomepageAssets/IMG_4541.jpg'
 import { Link } from 'react-router-dom';
 import NavBar from '../Components/NavBar/NavBar.jsx';
 import Footer from '../Components/Footer/Footer.jsx'
 import ShoeSwiper from "../Components/ShoeSwiper/ShoeSwiper.jsx";
 
 function homepage() {
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     return (
         <>
@@ -36,23 +39,15 @@ function homepage() {
 
             <section className='homepage-section' style={{background: 'rgb(215, 174, 121)'}}>
 
-                <p className='about-us-text'><b>ABOUT US:</b> we are a small startup business located in
-                    Slovenija
-                Maribor.
-                Our main mission is to bring you tested high-quality products, with a focus on premium
-                footwear.
-                As shoe enthusiasts ourselves, we wanted to share our passion, by offering a selection
-                of
-                the
+                <p className='about-us-text'><b>ABOUT US:</b> we are a small startup business located in Maribor, Slovenia.
+                Our main mission is to bring you tested, high-quality products, with a focus on premium footwear.
+                As shoe enthusiasts ourselves, we wanted to share our passion, by offering a selection of the
                 best brands under one roof.
-                We pride ourselves on providing an exceptional shopping experience, by offering a wide
-                variety
-                of footwear.
-                Whether you are looking for athletic performance or everyday casuals, we have something
-                for
-                everyone.
+                We pride ourselves on providing an exceptional shopping experience, by offering a wide variety of footwear.
+                Whether you are looking for athletic performance or everyday casuals, we have something for everyone.
             </p>
-        </section>
+                <button className='go-top-btn' onClick={scrollToTop}><p className='go-top-text'>↑</p></button>
+            </section>
 
 
             <Footer/>
