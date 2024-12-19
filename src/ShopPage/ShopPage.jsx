@@ -43,7 +43,6 @@ function ShopPage() {
                             key={product.id} // Use a unique key for React rendering
                             name={product.name}
                             price={`${product.price}$`}
-                            id={product.productId}
                             photo={Test}
 
                         />
