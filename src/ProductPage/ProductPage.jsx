@@ -3,8 +3,8 @@ import Footer from "../Components/Footer/Footer.jsx";
 import './ProductPage.css'
 import {Link, useParams} from 'react-router-dom'
 import {useEffect, useState} from "react";
-import Test from '../Components/InfoCards/infocardsAssets/computer2.svg'
-
+import Test from '../Homepage/HomepageAssets/Pair-of-pink-sport-shoes-on-white-background.jpg'
+import CommentSection from "../Components/CommentSection/CommentSection.jsx"
 
 function ProductPage() {
 
@@ -20,10 +20,10 @@ function ProductPage() {
                 }
                 return response.json();
             }) .then((data) => {
-                console.log(data);
-                setProduct(data);
-                setLoading(false);
-            })
+            console.log(data);
+            setProduct(data);
+            setLoading(false);
+        })
             .catch((error) => {
                 console.error("Error fetching products:", error);
                 setLoading(false);
@@ -47,14 +47,14 @@ function ProductPage() {
 
                 <div className={"ProductDetails"}>
                     <h1 className={"ImeIzdelka"}>{product.name}</h1>
-                    <h2 className={"ProductPrice"}>${product.price}</h2>
+                    <h2 className={"ProductPrice"}>{product.price}$</h2>
                     <p className={"ProductDescriptionOpis"}>Več o izdelku:</p>
                     <p className={"ProductDescription"}>{product.description}</p>
-                    <p className={"ProductDescription"}>Velikost: {product.size}</p>
-
+                    <p className={"ProductDescriptionOpis"}>Velikost: {product.size}</p>
                     <button className="purchase-button">Add to Cart</button>
                 </div>
 
+                <CommentSection/>
 
             </main>
             <Footer/>
