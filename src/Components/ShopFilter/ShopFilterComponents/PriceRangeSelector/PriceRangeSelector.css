@@ -1,7 +1,7 @@
 .double-slider-box {
-    background-color: #F6E4D9;
-    padding: 20px;
-    width: 75%;
+    width: 50%;
+    border-right:1px solid  #8a8a8a;
+    padding: 3%;
 }
 
 .range-slider {
@@ -16,7 +16,7 @@
 .slider-track {
     height: 100%;
     position: absolute;
-    background-color: #fe696a;
+    background-color: rgb(215, 174, 121);
     left: 0;
     right: 100%;
     border-radius: 5px;
@@ -38,7 +38,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 25px;
     border-radius: 50%;
     border: 3px solid #fff;
-    background: #fe696a;
+    background: #a17e55;
     pointer-events: auto;
     appearance: none;
     cursor: pointer;
@@ -52,7 +52,7 @@ input[type="range"]::-moz-range-thumb {
     width: 25px;
     border-radius: 50%;
     border: 3px solid #fff;
-    background: #fe696a;
+    background: #a17e55;
     pointer-events: auto;
     cursor: pointer;
     box-shadow: 0 0.125rem 0.5625rem -0.125rem rgba(0, 0, 0, 0.25);
@@ -117,8 +117,3 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-.title-text{
-    font-family: Inter, sans-serif;
-    padding-bottom: 5%;
-    color: #6b6262;
-}

@@ -1,0 +1,17 @@
+.checkbox-forum-container{
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+
+}
+
+.checkbox-input{
+
+}
+
+.checkbox-label{
+    color: #a17e55;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+

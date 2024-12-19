@@ -20,7 +20,7 @@ function InfoPage() {
 
                     <InfoCards name={"Jaša"} surname={"Potočnik"} mail={"vosuhi@gmail.com"} slika={jasaICON}
                                telephoneNum={"000 000 000"}
-                               about={"Anime girl creep"}></InfoCards>
+                               about={"Anime girl"}></InfoCards>
 
 
                     <InfoCards name={"Jernej"} surname={"Lobnik"} mail={"vosuhi@gmail.com"} slika={jernejICON}

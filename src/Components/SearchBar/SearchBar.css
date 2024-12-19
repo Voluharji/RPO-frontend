@@ -1,6 +1,6 @@
 .search-bar-container {
     width: 100%;
-    background-color: #f5c99b;
+    background-color: white;
     display: flex;
     justify-content: center;
     padding: 20px 0;
@@ -37,11 +37,12 @@
     width:5%;
     border-radius: 3px;
     border:none;
-    background-color: #cb2284;
+    background-color: rgb(215, 174, 121);
     transition: all 0.3s;
 }
 
 .find-btn:hover{
-    background-color: #7a1350;
+    background-color: #a17e55;
     cursor: pointer;
 }
+

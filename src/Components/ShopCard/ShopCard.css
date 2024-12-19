@@ -1,61 +1,42 @@
 .shop-card{
-    background-color: white;
-    width: 100%;
-    grid-row: span 4;
-    grid-column: span 3;
-    border-radius: 5px;
+    background-color: white;;
+    width: 20%;
     padding: 2%;
-    margin:2%;
+    border-bottom: 1px solid #b7b7b7;
+    border-top: 1px solid #b7b7b7;
 
     font-family: Inter,sans-serif;
     display: flex;
-    flex-direction: row;
-    transition: all 0.3s;
+    flex-direction: column;
 }
 
 .shop-card:hover{
-    transform: scale(1.03);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    /*transform: scale(1.03);*/
+    border: 1px solid #b7b7b7;
     cursor: pointer;
 }
 
 .shop-card-photo{
-    width: 65%;
+    width: 100%;
+    height: 60%;
 }
 
 .shop-card-info{
-    width: 35%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10%;
 
-    background-color: #F6E4D9;
-    border-radius: 3px;
+    background-color: white;
 }
 
 .shop-card-name{
     text-align: center;
-    padding: 5%;
-}
-
-.shop-card-btn{
-    background-color: #FF9900;
-    border-radius: 5px;
-    height: 15%;
-    width: 80%;
-    border:none;
-
-    transition: all 0.3s;
-}
-
-.shop-card-btn:hover{
-    background-color: #CC7700;
-    cursor: pointer;
 }
 
 .price-text{
     font-size: 1.5rem;
-    color: #ff6000;
+    color: #201E1F;
 }

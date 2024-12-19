@@ -4,7 +4,8 @@ import Footer from '../Components/Footer/Footer.jsx';
 import SearchBar from "../Components/SearchBar/SearchBar.jsx";
 import ShopFilter from "../Components/ShopFilter/ShopFilter.jsx";
 import ShopCard from "../Components/ShopCard/ShopCard.jsx";
-import Test from '../Homepage/HomepageAssets/Pair-of-pink-sport-shoes-on-white-background.jpg'
+import CategoriesMenu from "../Components/CategoriesMenu/CategoriesMenu.jsx";
+import Test from '../Homepage/HomepageAssets/nekiNeki.jpg'
 import './shoppage.css';
 
 function ShopPage() {
@@ -33,16 +34,20 @@ function ShopPage() {
         <>
             <NavBar />
             <SearchBar />
+            <CategoriesMenu/>
 
-            <main>
+            <section>
                 <ShopFilter />
+            </section>
 
+            <section className='card-section'>
                 {products.length > 0 ? (
                     products.map((product) => (
                         <ShopCard
                             key={product.id} // Use a unique key for React rendering
                             name={product.name}
-                            price={`${product.price}$`}
+                            price={`${product.price}€`}
+                            description={product.description}
                             photo={Test}
 
                         />
@@ -50,7 +55,7 @@ function ShopPage() {
                 ) : (
                     <p>Loading products...</p>
                 )}
-            </main>
+            </section>
 
             <Footer />
         </>
