@@ -1,7 +1,7 @@
 .Footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    min-height: 20%;
+    min-height: 10%;
     width: 100%; /* Use 100% instead of 100vw to respect parent width */
     align-items: center;
     background-color: #ffffff;
