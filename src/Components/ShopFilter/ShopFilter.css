@@ -17,7 +17,7 @@
 
 .forum-submit-btn{
     margin-top: 2%;
-    height: 13%;
+    height: 15%;
     width: 25%;
     border: none;
     background-color: rgb(215, 174, 121);
@@ -35,12 +35,18 @@
 }
 
 .checkbox-container{
+    width: 53%;
     display: flex;
     flex-direction: column;
+
+    border-right:1px solid  #8a8a8a;
 }
 
 .filter-section{
+    padding-left: 5%;
+    padding-right: 5%;
     display: flex;
     flex-direction: row;
-    gap: 3%;
+    gap: 2%;
+    width: 100%;
 }

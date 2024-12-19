@@ -36,21 +36,6 @@
     text-align: center;
 }
 
-.shop-card-btn{
-    background-color: rgb(215, 174, 121);
-    border-radius: 5px;
-    height: 18%;
-    width: 80%;
-    border:none;
-
-    transition: all 0.3s;
-}
-
-.shop-card-btn:hover{
-    background-color: #a17e55;
-    cursor: pointer;
-}
-
 .price-text{
     font-size: 1.5rem;
     color: #201E1F;

@@ -76,10 +76,10 @@ function CategoriesMenu (){
         }),
         multiValueRemove: (base) => ({
             ...base,
-            color: "rgb(128,126,126)",
+            color: "rgb(0,0,0)",
             "&:hover": {
                 backgroundColor: "rgb(213,210,210)",
-                color: "rgb(128,126,126)",
+                color: "rgb(0,0,0)",
             },
         }),
         placeholder: (base) => ({
