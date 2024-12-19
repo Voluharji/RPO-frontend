@@ -51,7 +51,7 @@ function CategoriesMenu (){
             width: "100%",
             paddingRight: "0px",
             marginRight: "0px",
-            height: "100%",
+            height: "40px",
             borderRadius: "0px",
             "&:hover": {
                 borderColor: "rgb(215, 174, 121)",
@@ -87,6 +87,7 @@ function CategoriesMenu (){
             color: "#ffffff",
             fontFamily: "Arial",
             fontSize: "16px",
+            textAlign: "center",
         })
     };
 
