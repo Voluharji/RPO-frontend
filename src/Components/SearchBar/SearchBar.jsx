@@ -7,7 +7,6 @@ function SearchBar(){
         <div className='search-section-container'>
 
             <div className='search-bar-container'>
-                <CategoriesMenu/>
                 <input type='text' className='search-bar' placeholder='Search'/>
                 <button className='find-btn'><img src={PovStekloSVG} alt='icon' height='25'/></button>
             </div>

@@ -1,9 +1,13 @@
 import './ShopFilter.css'
 import PriceRangeSelector from "./ShopFilterComponents/PriceRangeSelector/PriceRangeSelector.jsx";
 import CheckboxForum from "./ShopFilterComponents/CheckboxForm/CheckboxForum.jsx";
+import CategoriesMenu from "../CategoriesMenu/CategoriesMenu.jsx";
 function ShopFilter(){
     return(
         <div className='shop-filter-container'>
+            <CategoriesMenu/>
+
+            <br/>
             <p className='title-text'>Set price (min/max):</p>
             <PriceRangeSelector/>
 
