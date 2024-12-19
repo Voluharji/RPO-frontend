@@ -35,7 +35,7 @@ function ShopPage() {
             <SearchBar />
             <CategoriesMenu/>
 
-            <section className='filter-section'>
+            <section>
                 <ShopFilter />
             </section>
 
