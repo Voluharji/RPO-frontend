@@ -1,7 +1,7 @@
 import CartSvg from './ShopCardAssets/shopping-cart-outline-svgrepo-com.svg'
 import './ShopCard.css'
 
-function ShopCard({name,price,photo}){
+function ShopCard({name,price,description,photo}){
 
     return(
         <div className='shop-card'>
@@ -9,9 +9,12 @@ function ShopCard({name,price,photo}){
                 <img src={photo} alt='img' height='100%' width='100%'/>
             </div>
             <div className='shop-card-info'>
+                <br/>
                 <h3 className='shop-card-name'>{name}</h3>
+                <br/>
                 <p className='price-text'><b>{price}</b></p>
-                <button className='shop-card-btn'><img src={CartSvg} alt='Cart' height='100%' width='100%'/></button>
+                <br/>
+                <p>{description}</p>
             </div>
         </div>
     )
