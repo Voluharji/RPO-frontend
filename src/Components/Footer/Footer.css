@@ -1,35 +1,17 @@
 .Footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    min-height: 10%;
-    width: 100%; /* Use 100% instead of 100vw to respect parent width */
-    align-items: center;
-    background-color: #ffffff;
-    margin-top: auto; /* Push footer to the bottom if content is insufficient */
-}
-
-.footer-container-left {
-    text-align: right;
-    width: 100%;
-
-    font-family: 'Lato', sans-serif;
-    padding-right: 30px;
-
-}
-
-.contact-data {
-    font-size: 1.2rem;
-}
-
-.footer-container-right {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    font-size: 1.5em;
+    min-height: 10%;
+    width: 100%;
+
+    background-color: #ffffff;
 }
 
 .social-links {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     margin: 5px;
     cursor: pointer;
     letter-spacing: 5px;

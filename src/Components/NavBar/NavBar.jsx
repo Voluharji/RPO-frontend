@@ -1,8 +1,7 @@
-import basketSVG from './NavBarAssets/shopping-basket-svgrepo-com (1).svg'
-import infoSVG from './NavBarAssets/info-svgrepo-com.svg'
-import homeSVG from './NavBarAssets/home-smart-svgrepo-com.svg'
 import logoSVG from './NavBarAssets/VoSuHi.svg'
-import profileSVG from './NavBarAssets/profile-svgrepo-com.svg'
+import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 import './NavBar.css'
 import { Link } from 'react-router-dom'
 
@@ -24,25 +23,25 @@ function NavBar(){
 
             <Link to='/ShopPage' className="nav-link" style={{width: '25%'}}>
                 <button className='nav-button' style={{width: '100%'}}>
-                <img src={basketSVG} alt="Basket Icon" width="40" height="40"/>
+                <LocalGroceryStoreOutlinedIcon fontSize="large"/>
             </button>
             </Link>
 
             {token ? ( <Link to='/ProfilePage' className="nav-link" style={{width: '25%'}}>
             <button className='nav-button' style={{width: '100%'}}>
-                <img src={profileSVG} alt="Profile Icon" width="40" height="40"/>
+                <AccountCircleOutlinedIcon fontSize="large"/>
             </button>
         </Link>) : (
             <Link to='/LoginPage' className="nav-link" style={{width: '25%'}}>
                 <button className='nav-button' style={{width: '100%'}}>
-                    <img src={profileSVG} alt="Profile Icon" width="40" height="40"/>
+                    <AccountCircleOutlinedIcon fontSize="large"/>
                 </button>
             </Link>
             )}
 
             <Link to={'/InfoPage'} className="nav-link" style={{width: '25%'}}>
                 <button className='nav-button' style={{width: '100%'}}>
-                    <img src={infoSVG} alt="Contact list Icon" width="40" height="40"/>
+                    <ShoppingBasketOutlinedIcon fontSize="large"/>
                 </button>
             </Link>
         </div>

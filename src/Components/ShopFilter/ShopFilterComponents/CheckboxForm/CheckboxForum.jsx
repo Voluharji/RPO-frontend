@@ -1,10 +1,26 @@
 import './CheckboxForum.css'
+import {Checkbox, FormControlLabel} from "@mui/material";
+import {yellow} from "@mui/material/colors";
 
-function CheckboxForum({id,name}){
- return(
+
+function CheckboxForum({id, name}){
+
+ return (
      <div className='checkbox-forum-container'>
-         <input className='checkbox-input' type="checkbox" id={id} name={name} value={name}/>
-         <label className='checkbox-label' htmlFor={name}>{name}</label>
+         <FormControlLabel
+             control={
+                 <Checkbox
+                     id={id}
+                     value={name}
+                     sx={{
+                         '&.Mui-checked': {
+                             color: yellow[800],
+                         },
+                     }}
+                 />
+             }
+             label={name}
+         />
      </div>
  )
 }
