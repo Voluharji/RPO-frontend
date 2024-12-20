@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import NavBar from '../Components/NavBar/NavBar.jsx';
-import Footer from '../Components/Footer/Footer.jsx';
-import SearchBar from "../Components/SearchBar/SearchBar.jsx";
-import ShopFilter from "../Components/ShopFilter/ShopFilter.jsx";
-import ShopCard from "../Components/ShopCard/ShopCard.jsx";
-import CategoriesMenu from "../Components/CategoriesMenu/CategoriesMenu.jsx";
+import NavBar from '../../Components/NavBar/NavBar.jsx';
+import Footer from '../../Components/Footer/Footer.jsx';
+import SearchBar from "../../Components/SearchBar/SearchBar.jsx";
+import ShopFilter from "../../Components/ShopFilter/ShopFilter.jsx";
+import ShopCard from "../../Components/ShopCard/ShopCard.jsx";
+import CategoriesMenu from "../../Components/CategoriesMenu/CategoriesMenu.jsx";
 import Test from '../Homepage/HomepageAssets/nekiNeki.jpg'
 import './shoppage.css';
 

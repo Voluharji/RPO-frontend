@@ -1,11 +1,12 @@
-import NavBar from '../Components/NavBar/NavBar.jsx';
+import NavBar from '../../Components/NavBar/NavBar.jsx';
 import './SignUpPage.css'
 import {Link} from "react-router-dom";
-import Footer from "../Components/Footer/Footer.jsx";
+import Footer from "../../Components/Footer/Footer.jsx";
 import {useState} from "react";
-import SignUpFunction from "../Components/LoginSignUpFunctions/signUpFunction.jsx";
-import LoginFunction from "../Components/LoginSignUpFunctions/LoginFunction.jsx";
+import SignUpFunction from "../../Components/LoginSignUpFunctions/signUpFunction.jsx";
+import LoginFunction from "../../Components/LoginSignUpFunctions/LoginFunction.jsx";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 
 function SignUpPage(){
@@ -25,6 +26,19 @@ function SignUpPage(){
             alert("Please fill in all required fields: username, password, and email.");
             return;
         }
+
+        /*if (username) {
+            axios.get('/users/get')
+                .then(res => {
+                    res.data.forEach(row => {
+                        if (row.username === username) {
+                            alert('Username already exists');
+                        }
+                    });
+                }).catch(err => {
+                console.log(err);
+            })
+        }*/
 
         SignUpFunction({email, username, password,phoneNumber,firstName, lastName})
             .then(() => {
