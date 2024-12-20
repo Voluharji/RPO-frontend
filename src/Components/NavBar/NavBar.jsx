@@ -1,7 +1,7 @@
 import logoSVG from './NavBarAssets/VoSuHi.svg'
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 import './NavBar.css'
 import { Link } from 'react-router-dom'
 
@@ -41,7 +41,7 @@ function NavBar(){
 
             <Link to={'/InfoPage'} className="nav-link" style={{width: '25%'}}>
                 <button className='nav-button' style={{width: '100%'}}>
-                    <InfoOutlinedIcon fontSize="large"/>
+                    <ShoppingBasketOutlinedIcon fontSize="large"/>
                 </button>
             </Link>
         </div>
