@@ -7,6 +7,7 @@ import SignUpFunction from "../../Components/LoginSignUpFunctions/signUpFunction
 import LoginFunction from "../../Components/LoginSignUpFunctions/LoginFunction.jsx";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import {Alert} from "@mui/material";
 
 
 function SignUpPage(){
@@ -18,15 +19,26 @@ function SignUpPage(){
     const [lastName, setLastName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const navigate = useNavigate();
+    const [error, setError] = useState(null);
 
 
     const handleSignUp = () => {
 
-        if (!username || !password || !email) {
-            alert("Please fill in all required fields: username, password, and email.");
+
+        if (!username || !password || !email || !firstName || !lastName || !phoneNumber) {
+            setError("Please fill in all required fields: username, password, email, first name, last name, and phone number.");
             return;
         }
 
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+            setError("Invalid email address");
+            return;
+        }
+
+        if (isNaN(phoneNumber)) {
+            setError("Please enter a valid phone number");
+            return;
+        }
         /*if (username) {
             axios.get('/users/get')
                 .then(res => {
@@ -40,18 +52,21 @@ function SignUpPage(){
             })
         }*/
 
-        SignUpFunction({email, username, password,phoneNumber,firstName, lastName})
+        SignUpFunction({ email, username, password, phoneNumber, firstName, lastName })
             .then(() => {
-                LoginFunction({username, password})
-                    .then(()=>{
-                    navigate("/ProfilePage");
-                })
-
+                LoginFunction({ username, password })
+                    .then(() => {
+                        navigate("/ProfilePage");
+                    })
+                    .catch((error) => {
+                        console.error("Login failed:", error);
+                        setError("Login failed after sign-up. Please try again.");
+                    });
             })
-        .catch((error) => {
-            console.error("SignUp failed:", error);
-            alert("Sign up failed! Something went wrong.");
-        });
+            .catch((error) => {
+                console.error("SignUp failed:", error);
+                setError("Sign up failed! Something went wrong.");
+            });
     };
 
     return(
@@ -60,6 +75,12 @@ function SignUpPage(){
                 <main>
                     <div className='signup-container'>
                         <p>To sign up fill the fields below:</p>
+
+                        {error && (
+                            <Alert severity="warning" onClose={() => setError(null)}>
+                                {error}
+                            </Alert>
+                        )}
 
                         <div className='signup-form'>
                             <input className='signup-input' type='text' placeholder="Username" value={username}

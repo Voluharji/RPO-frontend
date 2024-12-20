@@ -5,12 +5,14 @@ import './LoginPage.css'
 import {Link, useNavigate} from "react-router-dom";
 import LoginFunction from "../../Components/LoginSignUpFunctions/LoginFunction.jsx";
 import {useState} from "react";
+import {Alert} from "@mui/material";
 
 function LoginPage(){
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const [error, setError] = useState(null);
 
     const handleLogin = () => {
         LoginFunction({ username, password })
@@ -19,7 +21,7 @@ function LoginPage(){
             })
             .catch((error) => {
                 console.error("Login failed:", error);
-                alert("Login failed! Please check your credentials.");
+                setError("Login failed! Please check your credentials.");
             });
     };
 
@@ -29,6 +31,15 @@ function LoginPage(){
 
             <main>
                 <div className='login-container'>
+
+
+                    {error && (
+                        <Alert severity="warning" onClose={() => setError(null)}>
+                            {error}
+                        </Alert>
+                    )}
+
+
                     <div className='login-top'>
                         <img src={loginICON} alt='login_icon' width='60px' height='60px'/>
                     </div>

@@ -10,7 +10,9 @@ function ProfilePage() {
         if (parts.length === 2) return parts.pop().split(';').shift();
         return undefined;
     }
-    function fetchWithToken() {
+
+    //spodnja funkcija se ne dela
+    /*function fetchWithToken() {
         const token = getCookie("token");
 
         if (!token) {
@@ -38,7 +40,7 @@ function ProfilePage() {
                 console.error("Error during fetch:", error);
             });
     }
-    fetchWithToken();
+    fetchWithToken();*/
 
 
     return (
