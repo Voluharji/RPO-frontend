@@ -7,7 +7,6 @@ import sorgoICON from '../InfoPage/Info page assets/2d1aff5a-5f49-479d-aa71-b83d
 import jakobICON from '../InfoPage/Info page assets/9319916.jpg'
 import jernejICON from '../InfoPage/Info page assets/st,small,507x507-pad,600x600,f8f8f8.jpg'
 
-
 function InfoPage() {
     return (
         <>

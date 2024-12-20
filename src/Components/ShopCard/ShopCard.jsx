@@ -1,10 +1,16 @@
 import CartSvg from './ShopCardAssets/shopping-cart-outline-svgrepo-com.svg'
 import './ShopCard.css'
+import {useNavigate} from "react-router-dom";
 
-function ShopCard({name,price,description,photo}){
+function ShopCard({name,price,description,photo, id}){
 
-    return(
-        <div className='shop-card'>
+        const navigate = useNavigate();
+        const handleCardClick = () => {
+            navigate(`/ShopPage/${id}`);
+        };
+
+        return(
+        <div className='shop-card' onClick={handleCardClick}>
             <div className='shop-card-photo'>
                 <img src={photo} alt='img' height='100%' width='100%'/>
             </div>

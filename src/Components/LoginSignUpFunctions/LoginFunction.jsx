@@ -13,7 +13,7 @@ function LoginFunction({username,password}) {
 
         fetch(`http://127.0.0.1:8081/api/login_check`, {method:"POST"
             ,headers:{
-            "Content-Type": "application/json",
+                "Content-Type": "application/json",
 
             },body:JSON.stringify({username:username,password:password})})
 
@@ -25,8 +25,9 @@ function LoginFunction({username,password}) {
             })
             .then((data) => {
                 //console.log(`Token received:`, data.token);
-                const expirationTime = new Date(Date.now() + 10 * 60 * 1000).toUTCString(); //nastavo sem na 30 min//expires=${expirationTime};
+                const expirationTime = new Date(Date.now() + 30 * 60 * 1000).toUTCString(); //nastavo sem na 30 min//expires=${expirationTime};
                 document.cookie = `token=${data.token}; path=/; expires=${expirationTime};`
+                document.cookie = `Username=${username}; path=/; expires=${expirationTime};`
 
                 return data.token;
             })

@@ -6,6 +6,7 @@ import LoginPage from './LoginPage/LoginPage.jsx'
 import SignUpPage from "./SignUpPage/SignUpPage.jsx";
 import InfoPage from "./InfoPage/InfoPage.jsx";
 import ProfilePage from "./ProfilePage/ProfilePage.jsx"
+import ProductPage from "./ProductPage/ProductPage.jsx"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/ShopPage" element={<ShopPage />} />
+        <Route path="/ShopPage/:productId" element={<ProductPage/>} />
         <Route path="/LoginPage" element={<LoginPage/>} />
         <Route path="/SignUpPage" element={<SignUpPage/>} />
         <Route path="/InfoPage" element={<InfoPage/>} />

@@ -9,6 +9,7 @@ import Test from '../Homepage/HomepageAssets/nekiNeki.jpg'
 import './shoppage.css';
 
 function ShopPage() {
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -47,7 +48,9 @@ function ShopPage() {
                             name={product.name}
                             price={`${product.price}€`}
                             description={product.description}
+                            id={product.productId}
                             photo={Test}
+
                         />
                     ))
                 ) : (
