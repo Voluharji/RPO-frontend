@@ -1,51 +1,89 @@
-.ProductPhoto {
-    grid-column:  2/span 4;
-    grid-row: 2/ span 5;
-    object-fit: cover;
-    border-radius: 8px;
+.info-section{
+    height: 70vh;
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+    width: 100%;
 }
 
-.ProductDetails{
-    grid-column:  6/ span 6;
-    grid-row: 2/ span 5;
-    object-fit: cover;
-    padding-left: 80px;
-
+.info-table{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 }
 
-.ProductDescriptionOpis{
-    padding-top: 5px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.ImeIzdelka{
-    font-size: 3rem;
-}
-.ProductPrice{
+.product-info-title{
+    font-family: 'Roboto', sans-serif;
     font-size: 2.3rem;
-    padding-top: 5px;
+    font-weight: bolder;
+
+    padding-bottom: 1%;
 }
 
-.ProductDescription{
-    text-align: justify;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 1.5rem;
-}
-
-.purchase-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 30px;
-    background-color: #FF9900;
-    color: black;
+.add-to-chart-btn{
+    height: 40px;
+    width: 50%;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: rgb(215, 174, 121);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+
+    transition: all 0.3s;
+    margin-top: 3%;
 }
 
-.purchase-button:hover {
-    background-color: #CC7700;
+.add-to-chart-btn:hover{
+    background-color: #a17e55;
+    cursor: pointer;
+}
+
+.description-section{
+    height: 30vh;
+    background-color: #ececec;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.product-page-description{
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    color: #4f4f4f;
+}
+
+.product-page-comments{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.swiper-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.thumbnail-swiper {
+    max-width: 15%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.current-frame-swiper {
+    width: 80%;
+    height: 400px; /* Match the height of the thumbnails */
 }

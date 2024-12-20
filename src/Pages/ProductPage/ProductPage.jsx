@@ -1,25 +1,46 @@
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
 import NavBar from '../../Components/NavBar/NavBar.jsx';
 import Footer from "../../Components/Footer/Footer.jsx";
-import './ProductPage.css'
-import {Link, useParams} from 'react-router-dom'
-import {useEffect, useState} from "react";
-import Test from '../Homepage/HomepageAssets/Pair-of-pink-sport-shoes-on-white-background.jpg'
-import CommentSection from "../../Components/CommentSection/CommentSection.jsx"
+import CommentSection from "../../Components/CommentSection/CommentSection.jsx";
+import Test from '../Homepage/HomepageAssets/nekiNeki.jpg';
+import './ProductPage.css';
+
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableRow,
+    Paper,
+} from "@mui/material";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
+// Import required modules
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 function ProductPage() {
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-    const {productId} = useParams();
+    const { productId } = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:8081/api/get_product?id=${productId}`,{method: 'GET'})
+        fetch(`http://localhost:8081/api/get_product?id=${productId}`, { method: 'GET' })
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`Fetch failed: ${response.statusText}`);
                 }
                 return response.json();
-            }) .then((data) => {
+            }).then((data) => {
             console.log(data);
             setProduct(data);
             setLoading(false);
@@ -39,27 +60,99 @@ function ProductPage() {
     }
 
     return (
-        <> <NavBar/>
-            <main>
+        <>
+            <NavBar />
 
-                <img src={Test} alt={product.name} width="100%" className="ProductPhoto"/>
+            <section className='info-section'>
 
+                <div className="swiper-container">
+                    {/* Thumbnails Swiper on the Left */}
+                    <Swiper
+                        onSwiper={setThumbsSwiper}
+                        direction="vertical"
+                        spaceBetween={10}
+                        slidesPerView={4}
+                        freeMode={true}
+                        watchSlidesProgress={true}
+                        modules={[FreeMode, Navigation, Thumbs]}
+                        className="thumbnail-swiper"
+                    >
+                        <SwiperSlide>
+                            <img src={Test} alt="Thumb 1" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Test} alt="Thumb 2" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Test} alt="Thumb 3" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Test} alt="Thumb 4" />
+                        </SwiperSlide>
+                    </Swiper>
 
-                <div className={"ProductDetails"}>
-                    <h1 className={"ImeIzdelka"}>{product.name}</h1>
-                    <h2 className={"ProductPrice"}>{product.price}$</h2>
-                    <p className={"ProductDescriptionOpis"}>Več o izdelku:</p>
-                    <p className={"ProductDescription"}>{product.description}</p>
-                    <p className={"ProductDescriptionOpis"}>Velikost: {product.size}</p>
-                    <button className="purchase-button">Add to Cart</button>
+                    {/* Main Swiper */}
+                    <Swiper
+                        style={{
+                            '--swiper-navigation-color': '#fff',
+                            '--swiper-pagination-color': '#fff',
+                        }}
+                        spaceBetween={0}
+                        navigation={false}
+                        thumbs={{ swiper: thumbsSwiper }}
+                        modules={[FreeMode, Thumbs]}
+                        className="current-frame-swiper"
+                    >
+                        <SwiperSlide>
+                            <img src={Test} alt="Slide 1" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Test} alt="Slide 2" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Test} alt="Slide 3" />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img src={Test} alt="Slide 4" />
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
 
-                <CommentSection/>
+                <div className='info-table'>
+                    <p className='product-info-title'>{product.name}</p>
+                    <TableContainer sx={{ backgroundColor: "#9D9E9E", width: "100%" }} component={Paper}>
+                        <Table>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell sx={{ color: "white" }}>{"ID"}</TableCell>
+                                    <TableCell sx={{ color: "white" }}>{product.productId}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={{ color: "white" }}>{"Time-created"}</TableCell>
+                                    <TableCell sx={{ color: "white" }}>{product.timeCreated}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={{ color: "white" }}>{"Price"}</TableCell>
+                                    <TableCell sx={{ color: "white" }}>{product.price}</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <button className="add-to-chart-btn">Add to Cart</button>
+                </div>
+            </section>
 
-            </main>
-            <Footer/>
+            <section className='description-section'>
+                <p className='product-page-description'>{product.description}</p>
+            </section>
+
+            <section className='product-page-comments'>
+                <CommentSection />
+            </section>
+
+            <Footer />
         </>
-    )
+    );
 }
 
-export default ProductPage
+export default ProductPage;

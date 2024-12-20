@@ -16,11 +16,11 @@ function ShopCard({name,price,description,photo, id}){
             <div className='shop-card-info'>
                 <br/>
                 <h3 className='shop-card-name'>{name}</h3>
-                <Rating defaultValue={5} size="small" />
+
                 <br/>
                 <p className='price-text'><b>{price}</b></p>
                 <br/>
-                <p>{description}</p>
+                <Rating defaultValue={5} size="small" />
             </div>
         </div>
     )
