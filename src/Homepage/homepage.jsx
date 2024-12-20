@@ -45,6 +45,8 @@ function homepage() {
                 best brands under one roof.
                 We pride ourselves on providing an exceptional shopping experience, by offering a wide variety of footwear.
                 Whether you are looking for athletic performance or everyday casuals, we have something for everyone.
+
+                    nigsd
             </p>
                 <button className='go-top-btn' onClick={scrollToTop}><p className='go-top-text'>↑</p></button>
             </section>
