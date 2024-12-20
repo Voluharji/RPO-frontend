@@ -48,6 +48,7 @@ function ShopPage() {
                             name={product.name}
                             price={`${product.price}€`}
                             description={product.description}
+                            id={product.productId}
                             photo={Test}
 
                         />
