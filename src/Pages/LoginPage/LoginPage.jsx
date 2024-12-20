@@ -1,9 +1,9 @@
-import NavBar from '../Components/NavBar/NavBar.jsx';
-import Footer from '../Components/Footer/Footer.jsx';
-import loginICON from '../LoginPage/LoginPageAssets/login-3-svgrepo-com (1).svg'
+import NavBar from '../../Components/NavBar/NavBar.jsx';
+import Footer from '../../Components/Footer/Footer.jsx';
+import loginICON from './LoginPageAssets/login-3-svgrepo-com (1).svg'
 import './LoginPage.css'
 import {Link, useNavigate} from "react-router-dom";
-import LoginFunction from "../Components/LoginSignUpFunctions/LoginFunction.jsx";
+import LoginFunction from "../../Components/LoginSignUpFunctions/LoginFunction.jsx";
 import {useState} from "react";
 
 function LoginPage(){

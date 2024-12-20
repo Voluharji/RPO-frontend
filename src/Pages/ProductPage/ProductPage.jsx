@@ -1,10 +1,10 @@
-import NavBar from '../Components/NavBar/NavBar.jsx';
-import Footer from "../Components/Footer/Footer.jsx";
+import NavBar from '../../Components/NavBar/NavBar.jsx';
+import Footer from "../../Components/Footer/Footer.jsx";
 import './ProductPage.css'
 import {Link, useParams} from 'react-router-dom'
 import {useEffect, useState} from "react";
 import Test from '../Homepage/HomepageAssets/Pair-of-pink-sport-shoes-on-white-background.jpg'
-import CommentSection from "../Components/CommentSection/CommentSection.jsx"
+import CommentSection from "../../Components/CommentSection/CommentSection.jsx"
 
 function ProductPage() {
 

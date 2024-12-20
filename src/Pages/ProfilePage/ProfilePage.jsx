@@ -1,5 +1,5 @@
-import NavBar from '../Components/NavBar/NavBar.jsx';
-import Footer from "../Components/Footer/Footer.jsx";
+import NavBar from '../../Components/NavBar/NavBar.jsx';
+import Footer from "../../Components/Footer/Footer.jsx";
 import './ProfilePage.css'
 
 function ProfilePage() {
