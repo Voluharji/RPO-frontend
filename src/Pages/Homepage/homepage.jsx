@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar.jsx';
 import Footer from '../../Components/Footer/Footer.jsx'
 import ShoeSwiper from "../../Components/ShoeSwiper/ShoeSwiper.jsx";
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
 function homepage() {
 
@@ -46,7 +47,7 @@ function homepage() {
                 We pride ourselves on providing an exceptional shopping experience, by offering a wide variety of footwear.
                 Whether you are looking for athletic performance or everyday casuals, we have something for everyone.
             </p>
-                <button className='go-top-btn' onClick={scrollToTop}><p className='go-top-text'>↑</p></button>
+                <button className='go-top-btn' onClick={scrollToTop}><KeyboardDoubleArrowUpIcon/></button>
             </section>
 
 

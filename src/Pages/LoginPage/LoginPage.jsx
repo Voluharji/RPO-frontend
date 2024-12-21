@@ -42,7 +42,7 @@ function LoginPage(){
 
 
             <section className='login-mid-section'>
-                <div className='login-mid'>
+                <div className='login-core'>
                     <input className='input-text-field' type='text' placeholder="Username" value={username}
                            onChange={(e) => setUsername(e.target.value)}/>
 
