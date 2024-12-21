@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import NavBar from '../../Components/NavBar/NavBar.jsx';
 import Footer from "../../Components/Footer/Footer.jsx";
 import CommentSection from "../../Components/CommentSection/CommentSection.jsx";
 import Test from '../Homepage/HomepageAssets/nekiNeki.jpg';
+import {CartContext} from "../../Components/CartFunctions/CartFunctions.jsx";
 import './ProductPage.css';
 
 import {
@@ -32,6 +33,8 @@ function ProductPage() {
     const { productId } = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { addToCart } = useContext(CartContext);
+
 
     useEffect(() => {
         fetch(`http://localhost:8081/api/get_product?id=${productId}`, { method: 'GET' })
@@ -57,6 +60,10 @@ function ProductPage() {
 
     if (!product) {
         return <p>Product not found.</p>;
+    }
+
+    function handleCart() {
+        addToCart(product);
     }
 
     return (
@@ -138,7 +145,7 @@ function ProductPage() {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    <button className="add-to-chart-btn">Add to Cart</button>
+                    <button className="add-to-chart-btn" onClick={handleCart}>Add to Cart</button>
                 </div>
             </section>
 

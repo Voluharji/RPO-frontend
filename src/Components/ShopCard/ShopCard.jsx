@@ -1,6 +1,7 @@
 import './ShopCard.css'
 import {useNavigate} from "react-router-dom";
 import {Rating} from "@mui/material";
+
 function ShopCard({name,price,description,photo, id}){
 
         const navigate = useNavigate();
