@@ -72,40 +72,45 @@ function SignUpPage(){
     return(
         <>
             <NavBar/>
-                <main>
-                    <div className='signup-container'>
-                        <p>To sign up fill the fields below:</p>
 
-                        {error && (
-                            <Alert severity="warning" onClose={() => setError(null)}>
-                                {error}
-                            </Alert>
-                        )}
+            <section className='signup-top-section'>
+                <div className='signup-container'>
+                <div className='signup-form'>
+                    <input className='signup-input' type='text' placeholder="Username" value={username}
+                           onChange={(e) => setUsername(e.target.value)}/>
+                    <input className='signup-input' type='text' placeholder="Password" value={password}
+                           onChange={(e) => setPassword(e.target.value)}/>
+                    <input className='signup-input' type='text' placeholder="Email" value={email}
+                           onChange={(e) => setEmail(e.target.value)}/>
+                    <input className='signup-input' type='text' placeholder="Phone number" value={phoneNumber}
+                           onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <input className='signup-input' type='text' placeholder="Firstname" value={firstName}
+                           onChange={(e) => setFirstName(e.target.value)}/>
+                    <input className='signup-input' type='text' placeholder="Lastname" value={lastName}
+                           onChange={(e) => setLastName(e.target.value)}/>
+                </div>
 
-                        <div className='signup-form'>
-                            <input className='signup-input' type='text' placeholder="Username" value={username}
-                                   onChange={(e) => setUsername(e.target.value)}/>
-                            <input className='signup-input' type='text' placeholder="Password" value={password}
-                                   onChange={(e) => setPassword(e.target.value)}/>
-                            <input className='signup-input' type='text' placeholder="Email" value={email}
-                                   onChange={(e) => setEmail(e.target.value)}/>
-                            <input className='signup-input' type='text' placeholder="Phone number" value={phoneNumber}
-                                   onChange={(e) => setPhoneNumber(e.target.value)}/>
-                            <input className='signup-input' type='text' placeholder="Firstname" value={firstName}
-                                   onChange={(e) => setFirstName(e.target.value)}/>
-                            <input className='signup-input' type='text' placeholder="Lastname" value={lastName}
-                                   onChange={(e) => setLastName(e.target.value)}/>
-                        </div>
+                <div className='signup-btn-section'>
+                    <Link to="/LoginPage">
+                        <button className="return-btn"><b>RETURN</b></button>
+                    </Link>
+                    <button className='submit-btn' onClick={handleSignUp}><b>SUBMIT</b></button>
+                </div>
 
-                        <div>
-                            <button className='submit-btn' onClick={handleSignUp}><b>SUBMIT</b></button>
-                        </div>
-                        <Link to="/LoginPage" style={{color: 'black', padding: '5%'}}>
-                            Back
-                        </Link>
-                    </div>
+                </div>
 
-                </main>
+            </section>
+            {error && (
+                <Alert severity="warning" onClose={() => setError(null)}>
+                    {error}
+                </Alert>
+            )}
+
+            <section className='signup-bot-section'>
+                    <p className='signup-bot-text'><b>No account... <br/>Sign up!</b></p>
+            </section>
+
+
             <Footer/>
         </>
     )

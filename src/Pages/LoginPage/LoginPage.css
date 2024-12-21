@@ -6,8 +6,8 @@
 }
 
 .login-top-text{
-    height: auto; /* Adjust height dynamically */
-    font-size: 2.9rem; /* Responsive font size */
+    height: auto;
+    font-size: 2.9rem;
     font-family: Inter, sans-serif;
 }
 

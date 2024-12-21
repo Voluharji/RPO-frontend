@@ -1,58 +1,101 @@
-.signup-container{
-    padding: 5% 10%;
-    margin: 20px auto;
-
-    background-color: white;
-    border: 1px solid black;
-
-    min-height: 200px;
-
-    grid-column: 5 / 9;
-    grid-row: 1 / 9;
-
-    font-family: Inter, sans-serif;
-
+.signup-top-section{
+    height: 50vh;
+    background-color: rgb(215, 174, 121);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.signup-bot-section{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-bot-text{
+    height: auto;
+    font-size: 2.9rem;
+    font-family: Inter, sans-serif;
+}
+
+.signup-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
 .signup-form{
-    padding-top: 5%;
-    padding-bottom: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap:20px 20px;
+    gap:10px 10px;
 }
 
 .signup-input{
-    flex: 1 1 calc(50% - 20px); /* 50% width minus gap for two per row */
-    max-width: 70%;
+    flex: 1 1 calc(50% - 10px); /* 50% width minus gap for two per row */
+    max-width: 40%;
     height: 50px;
-    padding: 10px;
     text-align: center;
-    border: 1px solid #ccc;
+    outline: none;
+    border:none;
     border-radius: 3px;
 
-    background-color: rgb(220,220,220);
+    background-color: white;
+}
+
+.signup-btn-section{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    width: 90%;
+    padding-top: 1%;
 }
 
 .submit-btn{
+    border:none;
+    background-color: #000000;
+    border-radius: 3px;
+
+    width: 25%;
+    height: 45px;
+
+    font-size: 1.2rem;
+    margin-left: 0.5%;
+
+    color: white;
+    font-family: Inter, sans-serif;
+    text-align: center;
+
+    transition: background-color 250ms;
+}
+
+.submit-btn:hover{
+    background-color: #ffffff;
+    color: black;
+    cursor: pointer;
+}
+
+.return-btn{
     border: none;
     border-radius: 3px;
-    background-color: #ecb677;
+    background-color: #ffffff;
+    color: black;
 
-    height: 50px;
-    width: 250px;
+    width: 205px;
+    height: 45px;
 
     font-size: 1.2rem;
 
     transition: background-color 250ms;
 }
 
-.submit-btn:hover{
+.return-btn:hover{
     cursor: pointer;
-    background-color: #efc7a2;
+    background-color: #000000;
+    color: white;
 }
