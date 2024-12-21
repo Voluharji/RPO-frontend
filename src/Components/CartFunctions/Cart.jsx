@@ -22,7 +22,7 @@ export default function Cart() {
                                     <img src={Test} alt={item.name} className="item-image" />
                                     <div className="item-details">
                                         <h4>{item.name}</h4>
-                                        <p>Price: ${item.price.toFixed(2)}</p>
+                                        <p>Price:  €{item.price.toFixed(2)}</p>
                                     </div>
                                     <div className="item-quantity">
                                         <button onClick={() => removeFromCart(item)}>-</button>
@@ -30,7 +30,7 @@ export default function Cart() {
                                         <button onClick={() => addToCart(item)}>+</button>
                                     </div>
                                     <div className="item-total">
-                                        <p>${(item.price * item.quantity).toFixed(2)}</p>
+                                        <p> €{(item.price * item.quantity).toFixed(2)}</p>
                                     </div>
                                 </div>
                             ))}
@@ -39,7 +39,7 @@ export default function Cart() {
 
                     <div className="total-cost">
                         <h3>Total Cost</h3>
-                        <h3>${getCartTotal().toFixed(2)}</h3>
+                        <h3>€{getCartTotal().toFixed(2)}</h3>
                     </div>
                 </>
             ) : (
