@@ -7,20 +7,23 @@ import SignUpPage from "./Pages/SignUpPage/SignUpPage.jsx";
 import InfoPage from "./Pages/InfoPage/InfoPage.jsx";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage.jsx"
 import ProductPage from "./Pages/ProductPage/ProductPage.jsx"
+import {CartProvider} from "./Components/CartFunctions/CartFunctions.jsx";
 
 function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/ShopPage" element={<ShopPage />} />
-        <Route path="/ShopPage/:productId" element={<ProductPage/>} />
-        <Route path="/LoginPage" element={<LoginPage/>} />
-        <Route path="/SignUpPage" element={<SignUpPage/>} />
-        <Route path="/InfoPage" element={<InfoPage/>} />
-        <Route path="/ProfilePage" element={<ProfilePage/>} />
-      </Routes>
-    </HashRouter>
+          <CartProvider>
+            <HashRouter>
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/ShopPage" element={<ShopPage />} />
+                <Route path="/ShopPage/:productId" element={<ProductPage/>} />
+                <Route path="/LoginPage" element={<LoginPage/>} />
+                <Route path="/SignUpPage" element={<SignUpPage/>} />
+                <Route path="/InfoPage" element={<InfoPage/>} />
+                <Route path="/ProfilePage" element={<ProfilePage/>} />
+              </Routes>
+            </HashRouter>
+          </CartProvider>
   );
 }
 
