@@ -22,7 +22,7 @@
 
 .moto-text {
     height: auto; /* Adjust height dynamically */
-    font-size: clamp(20px, 5vw, 45px); /* Responsive font size */
+    font-size: 2.9rem; /* Responsive font size */
     font-family: Inter, sans-serif;
 }
 

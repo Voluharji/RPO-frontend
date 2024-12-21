@@ -132,7 +132,7 @@ function ProductPage() {
                                     <TableCell sx={{ color: "white" }}>{product.timeCreated}</TableCell>
                                 </TableRow>
                                 <TableRow>
-                                    <TableCell sx={{ color: "white" }}>{"Price"}</TableCell>
+                                    <TableCell sx={{ color: "white" }}>{"Price in €"}</TableCell>
                                     <TableCell sx={{ color: "white" }}>{product.price}</TableCell>
                                 </TableRow>
                             </TableBody>

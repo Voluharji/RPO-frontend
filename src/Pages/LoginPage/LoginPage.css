@@ -1,52 +1,56 @@
-.login-container{
-    padding: 5% 10%;
-    margin: 20px auto;
+.login-top-section{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-top-text{
+    height: auto; /* Adjust height dynamically */
+    font-size: 2.9rem; /* Responsive font size */
+    font-family: Inter, sans-serif;
+}
+
+.login-mid-section{
+    background-color: rgb(215, 174, 121);
+    height: 50vh;
 
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
-    background-color: white;
-    border: 1px solid black;
-
-    min-height: 560px;
-
-    grid-column: 4 / 10;
-    grid-row: 1 / 8;
+    margin-bottom: 5%;
 }
 
-.login-top{
-    padding-bottom: 5%;
-}
-
-.login-mid{
+.login-btn-div{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: 50%;
+    align-items: center;
+    justify-content: end;
 }
 
 .input-text-field{
     border: none;
     border-radius: 3px;
-    background-color: rgb(220,220,220);
+    background-color: white;
     text-align: center;
 
-    width: 400px;
+    width: 50%;
     height: 50px;
 }
 
 .login-button{
     border:none;
-    background-color: #a17e55;
+    background-color: #000000;
     border-radius: 3px;
 
-    width: 300px;
-    height: 60px;
+    width: 40%;
+    height: 45px;
 
     font-size: 1.2rem;
-    margin-left: 12.5%;
+    margin-left: 1%;
 
-    color: rgb(0, 0, 0);
+    color: white;
     font-family: Inter, sans-serif;
     text-align: center;
 
@@ -54,30 +58,19 @@
 }
 
 .login-button:hover{
-    background-color: rgb(215, 174, 121);
+    background-color: #ffffff;
+    color: black;
     cursor: pointer;
-}
-
-.remember-checkbox{
-    padding: 2%;
-}
-
-.register-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:15px;
-
-    font-family: Inter, sans-serif;
 }
 
 .signup-btn{
     border: none;
     border-radius: 3px;
-    background-color: #ecb677;
+    background-color: #ffffff;
+    color: black;
 
-    height: 50px;
-    width: 250px;
+    width: 215px;
+    height: 45px;
 
     font-size: 1.2rem;
 
@@ -86,19 +79,40 @@
 
 .signup-btn:hover{
     cursor: pointer;
-    background-color: #efc7a2;
+    background-color: #000000;
+    color: white;
 }
 
-@media (max-width: 768px) {
-    .login-container {
-        width: 90%; /* Adjust for smaller screens */
-        grid-column: 1 / 7; /* Span the full width */
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login-mid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 
-@media (max-width: 480px) {
-    .login-container {
-        width: 95%; /* Further adjust for very small screens */
-        margin: 10px auto; /* Simplify margins */
-    }
+
+
+
+
+.remember-checkbox{
+    padding: 2%;
 }
+
+
