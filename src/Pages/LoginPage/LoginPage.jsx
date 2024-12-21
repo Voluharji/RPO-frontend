@@ -28,14 +28,6 @@ function LoginPage(){
         <>
             <NavBar/>
 
-
-            {error && (
-                <Alert severity="warning" onClose={() => setError(null)}>
-                    {error}
-                </Alert>
-            )}
-
-
             <section className='login-top-section'>
                 <p className='login-top-text'><b>Log in <br/>for even better <br/>shopping experience!</b></p>
             </section>
@@ -69,7 +61,15 @@ function LoginPage(){
                         </Link>
                         <button className='login-button' onClick={handleLogin}><b>LOG IN</b></button>
                     </div>
+
+                    {error && (
+                        <Alert severity="warning" onClose={() => setError(null)}>
+                            {error}
+                        </Alert>
+                    )}
                 </div>
+
+
             </section>
 
 
