@@ -8,6 +8,7 @@ import InfoPage from "./Pages/InfoPage/InfoPage.jsx";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage.jsx"
 import ProductPage from "./Pages/ProductPage/ProductPage.jsx"
 import {CartProvider} from "./Components/CartFunctions/CartFunctions.jsx";
+import CheckoutPage from "./Pages/CheckOutPage/CheckoutPage.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/SignUpPage" element={<SignUpPage/>} />
                 <Route path="/InfoPage" element={<InfoPage/>} />
                 <Route path="/ProfilePage" element={<ProfilePage/>} />
+                <Route path="/CheckoutPage" element={<CheckoutPage/>} />
               </Routes>
             </HashRouter>
           </CartProvider>

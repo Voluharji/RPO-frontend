@@ -21,6 +21,27 @@ const options = [
             { value: 6, label: "Winter" },
         ],
     },
+    {
+        label: "Shoes",
+        options: [
+            { value: 7, label: "Hiking Shoes"},
+            { value: 8, label: "Swimming Shoes"},
+            { value: 9, label: "Walking Shoes"},
+            { value: 0, label: "Sneakers"},
+            { value: 0, label: "Boot"},
+            { value: 0, label: "Loafer"},
+            { value: 0, label: "Heels"},
+        ],
+    },
+    {
+        label: "Slippers",
+        options: [
+            { value: 0, label: "Sliders"},
+            { value: 0, label: "Ballerina Slippers"},
+            { value: 0, label: "Bootie Slippers"},
+            { value: 0, label: "Moccasin Slippers"},
+        ],
+    },
 ];
 
 

@@ -71,9 +71,11 @@ function NavBar(){
                             <button className="close-modal" onClick={handleCloseModal}>
                                 <p>Continue Shopping</p>
                             </button>
+                            <Link to='/CheckoutPage' className="nav-link" style={{width: '25%'}}>
                             <button className="toCheckoutPage" onClick={handleCloseModal}>
                                 <p>Checkout</p>
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
