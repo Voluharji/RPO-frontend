@@ -4,4 +4,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+    background: linear-gradient(to bottom right,white 50%,rgb(215, 174, 121) 50%);
 }
