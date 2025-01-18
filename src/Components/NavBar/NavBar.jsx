@@ -6,6 +6,8 @@ import './NavBar.css'
 import { Link } from 'react-router-dom'
 import Cart from "../CartFunctions/Cart.jsx";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {CircularProgress} from "@mui/material";
 
 
 function NavBar(){
@@ -24,6 +26,19 @@ function NavBar(){
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+
+    const [loading,setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleCheckout = () =>{
+        setLoading(true);
+
+        setTimeout(()=>{
+        navigate('/CheckoutPage');
+        setLoading(false);
+        },1500);
+    }
+
 
     return(
         <div className='navbar'>
@@ -71,11 +86,17 @@ function NavBar(){
                             <button className="close-modal" onClick={handleCloseModal}>
                                 <p>Continue Shopping</p>
                             </button>
-                            <Link to='/CheckoutPage' className="nav-link" style={{width: '25%'}}>
-                            <button className="toCheckoutPage" onClick={handleCloseModal}>
-                                <p>Checkout</p>
-                            </button>
-                            </Link>
+
+                            {
+                                loading ? (
+                                    <CircularProgress sx={{color: "rgb(215, 174, 121)", marginRight: "8%", marginBottom:"3%"}}/>
+                                ) : (
+                                    <button className="toCheckoutPage" onClick={handleCheckout}>
+                                        <p>Checkout</p>
+                                    </button>
+                                )
+                            }
+
                         </div>
                     </div>
                 </div>

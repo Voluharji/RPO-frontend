@@ -3,7 +3,7 @@ import {Checkbox, FormControlLabel} from "@mui/material";
 import {yellow} from "@mui/material/colors";
 
 
-function CheckboxForum({id, name}){
+function CheckboxForum({id, name, onChange}){
 
  return (
      <div className='checkbox-forum-container'>
@@ -12,6 +12,7 @@ function CheckboxForum({id, name}){
                  <Checkbox
                      id={id}
                      value={name}
+                     onChange={(e) => onChange(e.target.checked, name)}
                      sx={{
                          '&.Mui-checked': {
                              color: yellow[800],

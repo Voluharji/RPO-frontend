@@ -1,22 +1,32 @@
-import { Link } from "react-router-dom";
 import CountrySelect from "./CheckoutPageComponents/Countryselector.jsx";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import "./CheckoutPage.css";
 import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
 import EuroOutlinedIcon from "@mui/icons-material/EuroOutlined";
-import { Button } from "@mui/material";
+import {Button, CircularProgress} from "@mui/material";
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 import logoSVG from '../../Components/NavBar/NavBarAssets/VoSuHi.svg'
 
 function CheckoutPage() {
     const [selectedToggle, setSelectedToggle] = useState("delivery");
 
-
     const handleToggle = (value) => {
         setSelectedToggle(value);
     };
+
+    const [loading,setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleCancel = () =>{
+        setLoading(true);
+        setTimeout(() => {
+            navigate("/ShopPage");
+            setLoading(false);
+        }, 1500)
+    }
 
     return (
         <>
@@ -93,17 +103,23 @@ function CheckoutPage() {
                         <h3>PURCHASE</h3>
                     </Button>
 
-                    <Link to="/ShopPage" className="nav-link">
-                        <Button
-                            variant="outlined"
-                            sx={{
-                                color: "black",
-                                borderColor: "black",
-                            }}
-                        >
-                            <h4>CANCEL TRANSACTION</h4>
-                        </Button>
-                    </Link>
+                    {
+                        loading ? (
+                            <CircularProgress sx={{color: "white", marginLeft: "43%"}}/>
+                        ) : (
+                            <Button
+                                onClick={handleCancel}
+                                variant="outlined"
+                                sx={{
+                                    color: "black",
+                                    borderColor: "black",
+                                }}
+                            >
+                                <h4>CANCEL TRANSACTION</h4>
+                            </Button>
+                        )
+                    }
+
                 </Box>
             </div>
         </>

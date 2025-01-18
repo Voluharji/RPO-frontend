@@ -7,6 +7,7 @@ import ShopCard from "../../Components/ShopCard/ShopCard.jsx";
 import CategoriesMenu from "../../Components/CategoriesMenu/CategoriesMenu.jsx";
 import Test from '../Homepage/HomepageAssets/nekiNeki.jpg'
 import './shoppage.css';
+import {LinearProgress} from "@mui/material";
 
 function ShopPage() {
 
@@ -54,7 +55,7 @@ function ShopPage() {
                         />
                     ))
                 ) : (
-                    <p>Loading products...</p>
+                    <LinearProgress color={"inherit"} sx={{width: "100%", color: "rgb(215, 174, 121)"}}/>
                 )}
             </section>
 

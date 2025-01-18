@@ -86,7 +86,9 @@ function PriceRangeSelector(){
 
     const stopDrag = async () => {
         setIsDragging(false);
-        const data = { min: parseInt(minVal), max: parseInt(maxVal) };
+        const data = { minPrice: minVal, maxPrice: maxVal };
+
+        console.log("Data:", data);
 
         try {
             const response = await axios.post("https://api/product_search", data);

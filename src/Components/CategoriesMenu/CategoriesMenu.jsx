@@ -49,9 +49,11 @@ function CategoriesMenu (){
 
     function handleChange(selectedOptions) {
         // Extract values of selected options
-        const values = selectedOptions.map(option => option.value);
+        const data = {categories: selectedOptions.map(option => option.value)};
 
-        axios.post("https://api/product_search", { values })
+        console.log("Data:", data);
+
+        axios.post("https://api/product_search", { data })
             .then(res => {
                 console.log("Response:", res);
                 console.log("Response Data:", res.data);
