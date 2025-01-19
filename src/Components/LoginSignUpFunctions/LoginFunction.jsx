@@ -24,7 +24,6 @@ function LoginFunction({username,password}) {
                 return response.json();
             })
             .then((data) => {
-                //console.log(`Token received:`, data.token);
                 const expirationTime = new Date(Date.now() + 30 * 60 * 1000).toUTCString(); //nastavo sem na 30 min//expires=${expirationTime};
                 document.cookie = `token=${data.token}; path=/; expires=${expirationTime};`
                 document.cookie = `Username=${username}; path=/; expires=${expirationTime};`
