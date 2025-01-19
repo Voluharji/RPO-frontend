@@ -3,7 +3,7 @@ import Footer from '../../Components/Footer/Footer.jsx';
 import './LoginPage.css'
 import {Link, useNavigate} from "react-router-dom";
 import LoginFunction from "../../Components/LoginSignUpFunctions/LoginFunction.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Alert, Checkbox, FormControlLabel} from "@mui/material";
 
 function LoginPage(){
@@ -12,10 +12,42 @@ function LoginPage(){
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const [error, setError] = useState(null);
+    const [rememberMe, setRememberMe] = useState(false);
+
+    const setCookie = (name, value, days) => {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Set expiration
+        document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+    };
+
+    const getCookie = (name) => {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(name + '=')) {
+                return cookie.substring(name.length + 1);
+            }
+        }
+        return '';
+    };
+
+    useEffect(() => {
+        const savedUsername = getCookie('username');
+        if (savedUsername) {
+            setUsername(savedUsername);
+            setRememberMe(true);
+        }
+    }, []);
+
 
     const handleLogin = () => {
         LoginFunction({ username, password })
             .then(() => {
+                if (rememberMe) {
+                    setCookie('username', username, 7);
+                } else {
+                    setCookie('username', '', -1);
+                }
                 navigate("/ProfilePage");
             })
             .catch((error) => {
@@ -38,14 +70,15 @@ function LoginPage(){
                     <input className='input-text-field' type='text' placeholder="Username" value={username}
                            onChange={(e) => setUsername(e.target.value)}/>
 
-                    <input className='input-text-field' type='text' placeholder="Password" value={password}
+                    <input className='input-text-field' type='password' placeholder="Password" value={password}
                            onChange={(e) => setPassword(e.target.value)}/>
 
                     <div className='login-btn-div'>
                         <FormControlLabel
                             control={
                                 <Checkbox
-                                    value={"remember me"}
+                                    checked={rememberMe}
+                                    onChange={(e) => setRememberMe(e.target.checked)}
                                     sx={{
                                         '&.Mui-checked': {
                                             color: "white",
