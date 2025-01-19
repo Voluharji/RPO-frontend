@@ -50,18 +50,26 @@ function ShopFilter(){
                 <PriceRangeSelector/>
 
                 <p className='title-text'>Choose brand:</p>
-                <div className='checkbox-container'>
+                <div className='checkbox-container-brands'>
                     <CheckboxForum name={"Adidas"} id={"brand1"} onChange={handleBrandChange}/>
                     <CheckboxForum name={"Nike"} id={"brand2"} onChange={handleBrandChange}/>
                     <CheckboxForum name={"Puma"} id={"brand3"} onChange={handleBrandChange}/>
+                    <CheckboxForum name={"Joma"} id={"brand4"} onChange={handleBrandChange}/>
+                    <CheckboxForum name={"Crocs"} id={"brand5"} onChange={handleBrandChange}/>
+                    <CheckboxForum name={"Vans"} id={"brand6"} onChange={handleBrandChange}/>
                 </div>
 
                 <br/>
                 <p className='title-text'>Choose size:</p>
-                <div className='checkbox-container'>
-                    <CheckboxForum name={"39"} id={"size1"} onChange={handleSizeChange}/>
-                    <CheckboxForum name={"40"} id={"size2"} onChange={handleSizeChange}/>
-                    <CheckboxForum name={"41"} id={"size3"} onChange={handleSizeChange}/>
+                <div className='checkbox-container-sizes'>
+                    <CheckboxForum name={"36"} id={"size1"} onChange={handleSizeChange}/>
+                    <CheckboxForum name={"37"} id={"size2"} onChange={handleSizeChange}/>
+                    <CheckboxForum name={"38"} id={"size3"} onChange={handleSizeChange}/>
+                    <CheckboxForum name={"39"} id={"size4"} onChange={handleSizeChange}/>
+                    <CheckboxForum name={"40"} id={"size5"} onChange={handleSizeChange}/>
+                    <CheckboxForum name={"41"} id={"size6"} onChange={handleSizeChange}/>
+                    <CheckboxForum name={"42"} id={"size7"} onChange={handleSizeChange}/>
+                    <CheckboxForum name={"43"} id={"size8"} onChange={handleSizeChange}/>
                 </div>
 
             </section>

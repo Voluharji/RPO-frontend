@@ -9,12 +9,55 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 
 import logoSVG from '../../Components/NavBar/NavBarAssets/VoSuHi.svg'
+import axios from "axios";
 
 function CheckoutPage() {
     const [selectedToggle, setSelectedToggle] = useState("delivery");
+    const [phone,setPhone] = useState(0);
+    const [name,setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [address, setAddress] = useState("");
+    const [post,setPost] = useState(0);
+
+    const [cardNum,setCardNum] = useState(0);
+    const [expDate, setExpDate] = useState(0);
+    const [cvc,setCvc] = useState(0);
+
 
     const handleToggle = (value) => {
         setSelectedToggle(value);
+    };
+
+    const handlePhone = (event) => {
+        setPhone(event.target.value);
+    };
+
+    const handleName = (event) => {
+        setName(event.target.value);
+    };
+
+    const handleSurname = (event) => {
+        setSurname(event.target.value);
+    };
+
+    const handleAddress = (event) => {
+        setAddress(event.target.value);
+    };
+
+    const handlePost = (event) => {
+        setPost(event.target.value);
+    };
+
+    const handleCardNum = (event) => {
+        setCardNum(event.target.value);
+    };
+
+    const handleExpDate = (event) => {
+        setExpDate(event.target.value);
+    };
+
+    const handleCvc = (event) => {
+        setCvc(event.target.value);
     };
 
     const [loading,setLoading] = useState(false);
@@ -25,8 +68,28 @@ function CheckoutPage() {
         setTimeout(() => {
             navigate("/ShopPage");
             setLoading(false);
-        }, 1500)
+        }, 1000)
     }
+
+
+    const handlePurchase = () =>{
+        setTimeout(async () => {
+            const data = { method: selectedToggle,
+                phone: phone, name: name, surname: surname, address: address, post: post,
+            cardNum: cardNum, expDate: expDate,cvc: cvc};
+
+            console.log("Data:", data);
+
+            try {
+                const response = await axios.post("https://api/product_search", data);
+                console.log("Server Response:", response.data);
+            } catch (error) {
+                console.error("Error sending data:", error);
+            }
+
+        },1000)
+    }
+
 
     return (
         <>
@@ -50,8 +113,8 @@ function CheckoutPage() {
 
                     <Button
                         value="delivery"
-                        selected={selectedToggle === "delivery"} // Check if this is selected
-                        onClick={() => handleToggle("delivery")} // Toggle state on click
+                        selected={selectedToggle === "delivery"}
+                        onClick={() => handleToggle("delivery")}
                         sx={{
                             color: selectedToggle === "delivery" ? "white" : "black",
                             backgroundColor: selectedToggle === "delivery" ? "rgb(0,0,0,1)" : "rgb(255,255,255)",
@@ -62,8 +125,8 @@ function CheckoutPage() {
                     </Button>
                     <Button
                         value="pickup"
-                        selected={selectedToggle === "pickup"} // Check if this is selected
-                        onClick={() => handleToggle("pickup")} // Toggle state on click
+                        selected={selectedToggle === "pickup"}
+                        onClick={() => handleToggle("pickup")}
                         sx={{
                             color: selectedToggle === "pickup" ? "white" : "black",
                             backgroundColor: selectedToggle === "pickup" ? "rgb(0,0,0)" : "rgb(255,255,255)",
@@ -77,22 +140,23 @@ function CheckoutPage() {
                     <hr/>
 
                     <CountrySelect sx={{width: "60%", border: "none"}}/>
-                    <TextField id="outlined-basic" label="Phone number" variant="filled"/>
+                    <TextField onChange={handlePhone} id="outlined-basic" label="Phone number" variant="filled"/>
 
-                    <TextField id="outlined-basic" label="Cardholder name" variant="filled"/>
-                    <TextField id="outlined-basic" label="Cardholder surname" variant="filled"/>
+                    <TextField onChange={handleName} id="outlined-basic" label="Cardholder name" variant="filled"/>
+                    <TextField onChange={handleSurname} id="outlined-basic" label="Cardholder surname" variant="filled"/>
 
-                    <TextField id="outlined-basic" label="Billing address" variant="filled"/>
-                    <TextField id="outlined-basic" label="Post number" variant="filled"/>
+                    <TextField onChange={handleAddress} id="outlined-basic" label="Billing address" variant="filled"/>
+                    <TextField onChange={handlePost} id="outlined-basic" label="Post number" variant="filled"/>
 
                     <CreditScoreOutlinedIcon fontSize="medium"/>
                     <EuroOutlinedIcon fontSize="medium"/>
 
-                    <TextField id="outlined-basic" label="Card number" variant="filled"/>
-                    <TextField id="outlined-basic" label="Expiration date" variant="filled"/>
-                    <TextField id="outlined-basic" label="CVC" variant="filled"/>
+                    <TextField onChange={handleCardNum} id="outlined-basic" label="Card number" variant="filled"/>
+                    <TextField onChange={handleExpDate} id="outlined-basic" label="Expiration date" variant="filled"/>
+                    <TextField onChange={handleCvc} id="outlined-basic" label="CVC" variant="filled"/>
 
                     <Button
+                        onClick={handlePurchase}
                         variant="outlined"
                         sx={{
                             color: "white",

@@ -7,14 +7,14 @@ import Test from '../Homepage/HomepageAssets/nekiNeki.jpg';
 import {CartContext} from "../../Components/CartFunctions/CartFunctions.jsx";
 import './ProductPage.css';
 
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableRow,
-    Paper,
-} from "@mui/material";
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import EuroOutlinedIcon from '@mui/icons-material/EuroOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import FingerprintOutlinedIcon from '@mui/icons-material/FingerprintOutlined';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -66,6 +66,10 @@ function ProductPage() {
         addToCart(product);
     }
 
+    const date = new Date(product.timeCreated);
+    console.log("Date: ", typeof date)
+
+
     return (
         <>
             <NavBar />
@@ -85,16 +89,16 @@ function ProductPage() {
                         className="thumbnail-swiper"
                     >
                         <SwiperSlide>
-                            <img src={Test} alt="Thumb 1" />
+                            <img src={Test} alt="Thumb 1"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Test} alt="Thumb 2" />
+                            <img src={Test} alt="Thumb 2"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Test} alt="Thumb 3" />
+                            <img src={Test} alt="Thumb 3"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Test} alt="Thumb 4" />
+                            <img src={Test} alt="Thumb 4"/>
                         </SwiperSlide>
                     </Swiper>
 
@@ -106,47 +110,57 @@ function ProductPage() {
                         }}
                         spaceBetween={0}
                         navigation={false}
-                        thumbs={{ swiper: thumbsSwiper }}
+                        thumbs={{swiper: thumbsSwiper}}
                         modules={[FreeMode, Thumbs]}
                         className="current-frame-swiper"
                     >
                         <SwiperSlide>
-                            <img src={Test} alt="Slide 1" />
+                            <img src={Test} alt="Slide 1"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Test} alt="Slide 2" />
+                            <img src={Test} alt="Slide 2"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Test} alt="Slide 3" />
+                            <img src={Test} alt="Slide 3"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={Test} alt="Slide 4" />
+                            <img src={Test} alt="Slide 4"/>
                         </SwiperSlide>
                     </Swiper>
                 </div>
 
                 <div className='info-table'>
                     <p className='product-info-title'>{product.name}</p>
-                    <TableContainer sx={{ backgroundColor: "#9D9E9E", width: "100%" }} component={Paper}>
-                        <Table>
-                            <TableBody>
-                                <TableRow>
-                                    <TableCell sx={{ color: "white" }}>{"ID"}</TableCell>
-                                    <TableCell sx={{ color: "white" }}>{product.productId}</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell sx={{ color: "white" }}>{"Time-created"}</TableCell>
-                                    <TableCell sx={{ color: "white" }}>{product.timeCreated}</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell sx={{ color: "white" }}>{"Price in €"}</TableCell>
-                                    <TableCell sx={{ color: "white" }}>{product.price}</TableCell>
-                                </TableRow>
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                    <List sx={{width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <FingerprintOutlinedIcon/>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="ID" secondary={product.productId}/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <CalendarMonthOutlinedIcon/>
+                                </Avatar>
+                            </ListItemAvatar>
+                                <ListItemText primary="Time Listed" secondary={date.toDateString()}/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <EuroOutlinedIcon/>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Price" secondary={product.price}/>
+                        </ListItem>
+                    </List>
                     <button className="add-to-chart-btn" onClick={handleCart}>Add to Cart</button>
                 </div>
+
+
             </section>
 
             <section className='description-section'>

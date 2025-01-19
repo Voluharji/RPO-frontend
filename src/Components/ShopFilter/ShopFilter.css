@@ -34,17 +34,35 @@
     cursor: pointer;
 }
 
-.checkbox-container{
+.checkbox-container-brands{
     width: 53%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 
     border-right:1px solid  #8a8a8a;
 }
 
+.checkbox-container-brands > * { /* Vsi child element*/
+    flex: 0 0 50%;
+}
+
+.checkbox-container-sizes{
+    width: 53%;
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-top: 4%;
+    padding-bottom: 3%;
+}
+
+.checkbox-container-sizes > * { /* Vsi child element*/
+    flex: 0 0  1%;
+}
+
+
 .filter-section{
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
     display: flex;
     flex-direction: row;
     gap: 2%;
