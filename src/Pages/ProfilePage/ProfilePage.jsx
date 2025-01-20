@@ -133,7 +133,7 @@ function ProfilePage() {
                 <div className="profile-page">
                     <div className="left-section">
                         <img className="profile-picture"
-                             src={"http://localhost:8081/" + userData?.imgRef || {defaultPicture}}
+                             src={userData?.imgRef ? `http://localhost:8081/${userData.imgRef}` : defaultPicture}
                              height="100%"
                              width="100%"
                         />
