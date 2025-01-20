@@ -133,7 +133,11 @@ function ProfilePage() {
                 <div className="profile-page">
                     <div className="left-section">
                         <img className="profile-picture"
-                             src={userData?.imgRef ? `http://localhost:8081/${userData.imgRef}` : defaultPicture}
+                             src={`http://localhost:8081/${userData?.imgRef || ''}`}
+                             alt="User"
+                             onError={(e) => {
+                                 e.target.src = defaultPicture;
+                             }}
                              height="100%"
                              width="100%"
                         />

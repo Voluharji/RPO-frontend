@@ -35,7 +35,7 @@ function ProductPage() {
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
     const { addToCart } = useContext(CartContext);
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:8081/api/get_product?id=${productId}`, { method: 'GET' })
@@ -66,6 +66,15 @@ function ProductPage() {
     function handleCart() {
         addToCart(product);
     }
+
+    const handleButtonClick = () => {
+        handleCart(); // Call the add-to-cart logic
+        setIsModalOpen(true); // Open the modal
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false); // Close the modal
+    };
 
     const date = new Date(product.timeCreated);
     console.log("Date: ", typeof date)
@@ -166,8 +175,20 @@ function ProductPage() {
                             <ListItemText primary="Price" secondary={product.price}/>
                         </ListItem>
                     </List>
-                    <button className="add-to-chart-btn" onClick={handleCart}>Add to Cart</button>
+                    <button className="add-to-chart-btn" onClick={handleButtonClick}>Add to Cart</button>
                 </div>
+
+                {/* Modal */}
+                {isModalOpen && (
+                    <div className="modal-overlayls">
+                        <div className="modalForAlert">
+                            <p>Item added to cart</p>
+                            <button className="close-modalForAlert-btn" onClick={closeModal}>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                )}
 
             </section>
 

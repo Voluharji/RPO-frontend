@@ -87,3 +87,45 @@
     width: 80%;
     height: 400px; /* Match the height of the thumbnails */
 }
+
+.modal-overlayls {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalForAlert {
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    width: 20%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modalForAlert p{
+    margin: 5px;
+    font-size: 1.4rem;
+}
+.close-modalForAlert-btn {
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: rgb(215, 174, 121);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.close-modalForAlert-btn:hover {
+    background-color: #a17e55;
+}
