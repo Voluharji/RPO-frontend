@@ -97,6 +97,7 @@ function ProfilePage() {
     };
 
     const [reviews, setReviews] = useState([]); // State to store reviews
+    const [productNames, setProductNames] = useState({}); // State to store product names by product_id
     const userId = userData?.id;
 
     // Fetch reviews by userId
@@ -104,19 +105,42 @@ function ProfilePage() {
         if (userId) {
             const fetchReviews = async () => {
                 try {
-                    const response = await fetch(`http://localhost:8081/api/review_get_by_user_id?userId=${userId}`, {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                    });
+                    const response = await fetch(
+                        `http://localhost:8081/api/review_get_by_user_id?userId=${userId}`,
+                        {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        }
+                    );
 
                     if (!response.ok) {
-                        throw new Error(`Failed to fetch reviews: ${response.status} ${response.statusText}`);
+                        throw new Error(
+                            `Failed to fetch reviews: ${response.status} ${response.statusText}`
+                        );
                     }
 
                     const data = await response.json();
                     setReviews(data); // Store fetched reviews in state
+
+                    // Fetch product names for each unique product_id in the reviews
+                    const productIds = [...new Set(data.map((review) => review.product_id))];
+                    const productNamesMap = {};
+
+                    for (const productId of productIds) {
+                        try {
+                            const productResponse = await fetch(
+                                `http://localhost:8081/api/getProduct?id=${productId}`
+                            );
+                            const productData = await productResponse.json();
+                            productNamesMap[productId] = productData.name; // Assuming productData has a `name` field
+                        } catch (error) {
+                            console.error(`Failed to fetch product with ID ${productId}:`, error);
+                        }
+                    }
+
+                    setProductNames(productNamesMap); // Update state with product names
                 } catch (error) {
                     console.error("Error fetching reviews:", error);
                 }
@@ -125,7 +149,6 @@ function ProfilePage() {
             fetchReviews();
         }
     }, [userId]);
-
 
         return (
             <>
@@ -235,11 +258,13 @@ function ProfilePage() {
                         </div>
 
                         <div className="reviews">
-                            <h3>Reviews</h3>
+                            <h3>Reviews<br/>---------------------------------------------------</h3>
                             {reviews.length > 0 ? (
                                 reviews.map((review) => (
                                     <p key={review.review_id}>
-                                        "{review.description}" - (Rating: {review.rating}/5)
+                                        <strong>Product:</strong> {productNames[review.product_id] || "Loading..."} <br />
+                                        <strong>Review:</strong> "{review.description}" - (Rating: {review.rating}/5)<br/>
+                                        -----------------------------------------------------------------------------
                                     </p>
                                 ))
                             ) : (
