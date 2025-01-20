@@ -21,7 +21,6 @@ function CommentSection() {
             alert("Comment cannot be empty!");
             return;
         }
-
         if (!username) {
             alert("You must be logged in to write a comment.");
             return;
