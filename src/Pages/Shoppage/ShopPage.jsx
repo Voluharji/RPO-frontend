@@ -54,7 +54,7 @@ function ShopPage() {
                             price={`${product.price}€`}
                             description={product.description}
                             id={product.productId}
-                            photo={Test}
+                            photo={"http://localhost:8081/" + product.variants[0].imgref}
 
                         />
                     ))

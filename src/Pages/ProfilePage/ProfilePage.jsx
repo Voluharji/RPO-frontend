@@ -132,10 +132,10 @@ function ProfilePage() {
                 <NavBar/>
                 <div className="profile-page">
                     <div className="left-section">
-                        <img
-                            src={userData?.imgRef || defaultPicture}
-                            alt="Profile"
-                            className="profile-picture"
+                        <img className="profile-picture"
+                             src={"http://localhost:8081/" + userData?.imgRef || {defaultPicture}}
+                             height="100%"
+                             width="100%"
                         />
                         <h2 className="username">Username: {userData?.username || "Loading..."}</h2>
                         <div className="user-info">

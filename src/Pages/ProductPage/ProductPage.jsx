@@ -15,6 +15,7 @@ import Avatar from '@mui/material/Avatar';
 import EuroOutlinedIcon from '@mui/icons-material/EuroOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import FingerprintOutlinedIcon from '@mui/icons-material/FingerprintOutlined';
+import HeightOutlinedIcon from '@mui/icons-material/HeightOutlined';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -151,6 +152,14 @@ function ProductPage() {
                         <ListItem>
                             <ListItemAvatar>
                                 <Avatar>
+                                    <HeightOutlinedIcon/>
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Size" secondary={product.variants.forEach((tag) => {tag.size})}/>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
                                     <EuroOutlinedIcon/>
                                 </Avatar>
                             </ListItemAvatar>
@@ -159,7 +168,6 @@ function ProductPage() {
                     </List>
                     <button className="add-to-chart-btn" onClick={handleCart}>Add to Cart</button>
                 </div>
-
 
             </section>
 

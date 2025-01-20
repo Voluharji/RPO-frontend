@@ -1,12 +1,32 @@
 import './ShopFilter.css'
 import CheckboxForum from "./ShopFilterComponents/CheckboxForm/CheckboxForum.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {LinearProgress, Slider} from "@mui/material";
 import axios from "axios";
 function ShopFilter({ onProductsChange }){
     const [loading, setLoading] = useState(false);
     const [selectedBrands,setSelectedBrands] = useState([]);
     const [selectedSize,setSelectedSize] = useState([]);
+
+    const [tags,setTags] = useState([])
+    const [firstRender, setFirstRender] = useState(true);
+
+    useEffect(() => {
+        if (firstRender) {
+            axios
+                .get(`http://localhost:8081/api/get_tags`)
+                .then((res) => {
+                    const data = res.data;
+                    setTags(data);
+                    setFirstRender(false)
+                })
+                .catch((err) => {
+                    console.error("Error fetching products:", err);
+                });
+        }
+    }, [firstRender]);
+
+
 
     const handleBrandChange = (isChecked, name) => {
         setSelectedBrands((prev) =>
@@ -110,12 +130,17 @@ function ShopFilter({ onProductsChange }){
 
                 <p className='title-text'>Choose brand:</p>
                 <div className='checkbox-container-brands'>
-                    <CheckboxForum name={"Adidas"} id={"brand1"} onChange={handleBrandChange}/>
-                    <CheckboxForum name={"Nike"} id={"brand2"} onChange={handleBrandChange}/>
-                    <CheckboxForum name={"Puma"} id={"brand3"} onChange={handleBrandChange}/>
-                    <CheckboxForum name={"Joma"} id={"brand4"} onChange={handleBrandChange}/>
-                    <CheckboxForum name={"Crocs"} id={"brand5"} onChange={handleBrandChange}/>
-                    <CheckboxForum name={"Vans"} id={"brand6"} onChange={handleBrandChange}/>
+                    {tags.length > 0 ? (
+                        tags.map((tag) => (
+                            <CheckboxForum
+                                key={tag.tag_id} // Use a unique key for React rendering
+                                name={tag.name}
+                            />
+                        ))
+                    ) : (
+                        <LinearProgress color={"inherit"} sx={{width: "100%", color: "rgb(215, 174, 121)"}}/>
+                    )}
+
                 </div>
 
                 <br/>
