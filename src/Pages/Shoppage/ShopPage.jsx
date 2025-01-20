@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useEffect, useState} from 'react';
 import NavBar from '../../Components/NavBar/NavBar.jsx';
 import Footer from '../../Components/Footer/Footer.jsx';
 import SearchBar from "../../Components/SearchBar/SearchBar.jsx";
@@ -8,28 +8,32 @@ import CategoriesMenu from "../../Components/CategoriesMenu/CategoriesMenu.jsx";
 import Test from '../Homepage/HomepageAssets/nekiNeki.jpg'
 import './shoppage.css';
 import {LinearProgress} from "@mui/material";
+import axios from "axios";
 
 function ShopPage() {
 
     const [products, setProducts] = useState([]);
+    const [firstRender, setFirstRender] = useState(true);
 
     useEffect(() => {
-        // Update with your correct API endpoint
-        fetch('http://localhost:8081/api/get_products')
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error(`HTTP error! status: ${res.status}`);
-                }
-                return res.json();
-            })
-            .then((data) => {
-                console.log(data);
-                setProducts(data);
-            })
-            .catch((error) => {
-                console.error("Error fetching products:", error);
-            });
-    }, []);
+        if (firstRender) {
+            axios
+                .get(`http://localhost:8081/api/get_products`)
+                .then((res) => {
+                    const data = res.data;
+                    setProducts(data);
+                    setFirstRender(false);
+                })
+                .catch((err) => {
+                    console.error("Error fetching products:", err);
+                });
+        }
+    }, [firstRender]);
+
+
+    const updateProducts = (newProducts) => {
+        setProducts(newProducts);
+    };
 
     return (
         <>
@@ -38,7 +42,7 @@ function ShopPage() {
             <CategoriesMenu/>
 
             <section>
-                <ShopFilter />
+                <ShopFilter onProductsChange={updateProducts} />
             </section>
 
             <section className='card-section'>

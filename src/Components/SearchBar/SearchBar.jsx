@@ -19,7 +19,7 @@ function SearchBar(){
         console.log("Data:", data);
 
         try {
-            const response = await axios.post("https://api/product_search", data);
+            const response = await axios.post("http://localhost:8081/api/filter", data);
             console.log("Server Response:", response.data);
         } catch (error) {
             console.error("Error sending data:", error);

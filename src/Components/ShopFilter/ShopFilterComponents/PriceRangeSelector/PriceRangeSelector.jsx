@@ -2,7 +2,7 @@ import './PriceRangeSelector.css'
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function PriceRangeSelector(){
+function PriceRangeSelector({ onProductsChange }){
     const [sliderMinValue] = useState(0);
     const [sliderMaxValue] = useState(1000);
     const [minVal, setMinVal] = useState(0);
@@ -91,8 +91,14 @@ function PriceRangeSelector(){
         console.log("Data:", data);
 
         try {
-            const response = await axios.post("https://api/product_search", data);
+            const response = await axios.post("http://localhost:8081/api/filter", data,{
+                headers: {
+                    // Overwrite Axios's automatically set Content-Type
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
             console.log("Server Response:", response.data);
+            onProductsChange(response.data);
         } catch (error) {
             console.error("Error sending data:", error);
         }

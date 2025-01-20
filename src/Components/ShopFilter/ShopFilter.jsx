@@ -1,10 +1,9 @@
 import './ShopFilter.css'
-import PriceRangeSelector from "./ShopFilterComponents/PriceRangeSelector/PriceRangeSelector.jsx";
 import CheckboxForum from "./ShopFilterComponents/CheckboxForm/CheckboxForum.jsx";
 import {useState} from "react";
-import {LinearProgress} from "@mui/material";
+import {LinearProgress, Slider} from "@mui/material";
 import axios from "axios";
-function ShopFilter(){
+function ShopFilter({ onProductsChange }){
     const [loading, setLoading] = useState(false);
     const [selectedBrands,setSelectedBrands] = useState([]);
     const [selectedSize,setSelectedSize] = useState([]);
@@ -21,7 +20,6 @@ function ShopFilter(){
         );
     };
 
-
     const handleSubmit = () =>{
         setLoading(true);
         setTimeout(async () => {
@@ -32,7 +30,12 @@ function ShopFilter(){
             console.log("Data:", data);
 
             try {
-                const response = await axios.post("https://api/product_search", data);
+                const response = await axios.post("http://localhost:8081/api/filter", data,{
+                    headers: {
+                        // Overwrite Axios's automatically set Content-Type
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
                 console.log("Server Response:", response.data);
             } catch (error) {
                 console.error("Error sending data:", error);
@@ -41,13 +44,69 @@ function ShopFilter(){
         },2000)
     }
 
+
+    // Price slider
+    const minDistance = 50;
+    const [value, setValue] = useState([0, 1000]);
+
+    const handlePriceChange = async (event, newValue, activeThumb) => {
+        if (!Array.isArray(newValue)) {
+            return;
+        }
+
+        if (newValue[1] - newValue[0] < minDistance) {
+            if (activeThumb === 0) {
+                const clamped = Math.min(newValue[0], 1000 - minDistance);
+                setValue([clamped, clamped + minDistance]);
+            } else {
+                const clamped = Math.max(newValue[1], minDistance);
+                setValue([clamped - minDistance, clamped]);
+            }
+        } else {
+            setValue(newValue);
+        }
+
+        const data = {minPrice: value[0], maxPrice: value[1]};
+
+        console.log("Data:", data);
+
+        try {
+            const response = await axios.post("http://localhost:8081/api/filter", data, {
+                headers: {
+                    // Overwrite Axios's automatically set Content-Type
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log("Server Response:", response.data);
+            onProductsChange(response.data);
+        } catch (error) {
+            console.error("Error sending data:", error);
+        }
+    };
+
+
+
     return(
         <div className='shop-filter-container'>
 
             <section className='filter-section'>
 
                 <p className='title-text'>Set price (min/max):</p>
-                <PriceRangeSelector/>
+
+
+                <Slider
+                    getAriaLabel={() => 'Minimum distance shift'}
+                    value={value}
+                    onChange={handlePriceChange}
+                    valueLabelDisplay="auto"
+                    disableSwap
+                    min={0}
+                    max={1000}
+
+                    sx={{width: "50%", paddingTop: "12%", color: "rgb(215, 174, 121)"}}
+                />
+                <hr/>
+
 
                 <p className='title-text'>Choose brand:</p>
                 <div className='checkbox-container-brands'>
